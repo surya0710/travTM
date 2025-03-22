@@ -53,7 +53,7 @@
         </div>
         <ul class="nav-menu">
           <li class="dropdown">
-            <a href="#">Visa Services <i class="fas fa-chevron-down"></i></a>
+            <a href="{{ route('visaServices') }}">Visa Services <i class="fas fa-chevron-down"></i></a>
             <!-- <ul class="dropdown-menu">
               <li><a href="#">Hotels</a></li>
               <li>
@@ -63,7 +63,7 @@
             </ul> -->
           </li>
           <li class="dropdown">
-            <a href="#">Flights <i class="fas fa-chevron-down"></i></a>
+            <a href="{{ route('flights') }}">Flights <i class="fas fa-chevron-down"></i></a>
             <!-- <ul class="dropdown-menu">
               <li><a href="#">Flight</a></li>
               <li><a href="./">Domestic Flights</a></li>
@@ -72,13 +72,13 @@
           </li>
           <li class="dropdown">
             <a href="#">Holidays <i class="fas fa-chevron-down"></i></a>
-            <!-- <ul class="dropdown-menu">
-              <li><a href="#">Holiday</a></li>
-              <li><a href="#">Domestic Holiday</a></li>
+            <ul class="dropdown-menu">
+              <li><a href="{{ route('holidays') }}">Holiday</a></li>
+              <li><a href="{{ route('domestic.Holidays') }}">Domestic Holiday</a></li>
               <li>
-                <a href="#">International Holiday</a>
+                <a href="{{ route('international.Holidays') }}">International Holiday</a>
               </li>
-            </ul> -->
+            </ul>
           </li>
           <li class="dropdown">
             <a href="{{ route('hotels') }}">Hotels <i class="fas fa-chevron-down"></i></a>

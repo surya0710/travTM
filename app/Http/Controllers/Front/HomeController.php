@@ -93,4 +93,23 @@ class HomeController extends Controller
     public function hotels(){
         return view('hotels');
     }
+
+    public function flights(){
+        return view('flights');
+    }
+
+    public function holidays(){
+        return view('holidays');
+    }
+
+    public function domesticHolidays(){
+        return view('domestic-holidays');
+    }
+    public function internationalHolidays(){
+        return view('internationalHolidays');
+    }
+
+    public function visaServices(){
+        return view('visa-services');
+    }
 }
