@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation with Validator.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/validator@latest/validator.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        input {
+            display: block;
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 300px;
+        }
+        button {
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Sign Up Form</h2>
+    <form id="signupForm">
+        <label>Username:</label>
+        <input type="text" id="username" placeholder="Enter username">
+        <span class="error" id="usernameError"></span>
+
+        <label>Email:</label>
+        <input type="text" id="email" placeholder="Enter email">
+        <span class="error" id="emailError"></span>
+
+        <label>Password:</label>
+        <input type="password" id="password" placeholder="Enter password">
+        <span class="error" id="passwordError"></span>
+
+        <label>Phone Number:</label>
+        <input type="text" id="phone" placeholder="Enter phone number">
+        <span class="error" id="phoneError"></span>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            let username = document.getElementById('username').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let password = document.getElementById('password').value.trim();
+            let phone = document.getElementById('phone').value.trim();
+
+            let usernameError = document.getElementById('usernameError');
+            let emailError = document.getElementById('emailError');
+            let passwordError = document.getElementById('passwordError');
+            let phoneError = document.getElementById('phoneError');
+
+            usernameError.textContent = '';
+            emailError.textContent = '';
+            passwordError.textContent = '';
+            phoneError.textContent = '';
+
+            let valid = true;
+
+            // Validate Username (Only letters, at least 3 characters)
+            if (!validator.isLength(username, { min: 3 })) {
+                usernameError.textContent = 'Username must be at least 3 characters long';
+                valid = false;
+            } else if (!validator.matches(username, /^[A-Za-z]+$/)) {
+                usernameError.textContent = 'Username can only contain letters (no numbers or special characters)';
+                valid = false;
+            }
+
+            // Validate Email
+            if (!validator.isEmail(email)) {
+                emailError.textContent = 'Invalid email format';
+                valid = false;
+            }
+
+            // Validate Password (at least 8 characters, contains letters and numbers)
+            if (!validator.isLength(password, { min: 8 }) || !validator.isStrongPassword(password, { minNumbers: 1, minUppercase: 1 })) {
+                passwordError.textContent = 'Password must be at least 8 characters, include numbers & uppercase letters';
+                valid = false;
+            }
+
+            // Validate Phone Number
+            if (!validator.isMobilePhone(phone, 'any')) {
+                phoneError.textContent = 'Invalid phone number';
+                valid = false;
+            }
+
+            if (valid) {
+                alert('Form submitted successfully!');
+            }
+        });
+    </script>
+
+</body>
+</html>
