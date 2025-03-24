@@ -20,7 +20,6 @@ class BannerController extends Controller
     public function store(Request $request){
         $validator = Validator::make($request->all(), [
            'heading' => 'required|string',
-           'description' => 'required|string',
            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg,webp',
            'status' => 'required',
            'display_page' => 'required',
@@ -31,7 +30,7 @@ class BannerController extends Controller
         }
         $banner = new Banners();
         $banner->heading = $request->heading;
-        $banner->description = $request->description;
+        $banner->description = $request->description ?? '';
         $banner->status = $request->status;
         $banner->display_page = $request->display_page;
         if($request->hasFile('image')) {
@@ -56,7 +55,6 @@ class BannerController extends Controller
     public function update(Request $request, $id){
         $validator = Validator::make($request->all(), [
             'heading' => 'required|string',
-            'description' => 'required|string',
             'status' => 'required',
             'display_page' => 'required',
         ]);
@@ -68,7 +66,7 @@ class BannerController extends Controller
         $banner = Banners::find($id);
 
         $banner->heading = $request->heading;
-        $banner->description = $request->description;
+        $banner->description = $request->description ?? '';
         $banner->status = $request->status;
         $banner->display_page = $request->display_page;
         if($request->hasFile('image')) {

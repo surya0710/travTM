@@ -7,12 +7,12 @@
       />
       <div class="dmHoliday-hero-overlay"></div>
       <div class="dmHoliday-hero-content">
-        <h1 class="dmHoliday-hero-title">Who We Are</h1>
+        <h1 class="dmHoliday-hero-title">About Trav-TM</h1>
         <p class="dmHoliday-hero-subtitle">
-          We are a team of passionate individuals who are dedicated to making
-          your travel dreams come true. With years of experience in the travel
-          industry, we have the knowledge and expertise to provide you with the
-          best travel solutions.
+          At Trav-TM, we believe that travel is more than just reaching a destination—it’s about creating experiences that stay with you for a 
+          lifetime. Whether you’re planning a holiday, a business trip, a group event, or need visa assistance, we ensure a smooth and 
+          stress-free process, making travel planning effortless. Our team of expert travel agents is dedicated to providing you with the best 
+          travel solutions, tailored to your needs. With a wide range of services, we aim to make your travel experience memorable and hassle-free.
         </p>
       </div>
     </section>
@@ -20,244 +20,71 @@
       <div class="about-sec-container">
         <!-- Hero Section -->
         <div class="about-us-hero">
-          <h1>Building the Holiday Eco-system for Happy Travelers</h1>
+          <h1>Our Story</h1>
           <div class="divider"></div>
-          <p>
-            Founded in 2011, Trav-TM is India's leading online travel
-            marketplace that connects travelers with trusted and expert travel
-            agents on a common platform. Through its innovative and
-            technology-focused solutions, Trav-TM aims to encompass all
-            components of the travel ecosystem. With a significant cumulative
-            funding from prominent investors, the company has achieved
-            operational profitability and is on track to further strengthen its
-            market position.
-          </p>
+          <p class="text-center">Trav-TM was founded with a simple yet powerful vision—to make travel easy, accessible, and reliable for everyone. Over the years, we noticed that many travelers struggle with complicated visa processes, unpredictable flight prices, and unreliable service providers. That’s why Pooja Dogra, a seasoned professional with 25+ years of experience in the travel industry, decided to create a company that puts travelers first.</p>
+          <p class="text-center mt-2">Trav-TM is a unit of Day Dreams, a company known for its expertise in travel marketing, hotel memberships, and student consultancy. While Trav-TM is a growing brand, its foundation is built on years of industry experience, giving us the ability to provide expert guidance in travel planning.</p>
         </div>
-
-        <!-- Stats Section -->
-        <div class="stats">
-          <div class="stat-card">
-            <div class="icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
+      </div>
+    </section>
+    <section class="bg-light what-we-do">
+      <div class="about-sec-container">
+        <!-- Hero Section -->
+        <div class="about-us-hero">
+          <h1>What We Do</h1>
+          <div class="divider"></div>
+          <p class="text-center">We offer personalized travel solutions for individuals, families, and businesses. Whether you need assistance with flights, hotels, visas, or event planning, we handle everything with expert guidance and a customer-first approach.</p>
+        </div>
+        <div class="row">
+          <div class="service-grid">
+            <div class="service-card animate-on-scroll animated">
+              <h3>Destination Weddings & Event Travel</h3>
+              <p>Dreaming of a wedding at an exotic location? Our team manages the entire travel experience for you and your guests, from flights and accommodation to event coordination, making your big day stress-free.</p>
             </div>
-            <div class="stat-number">20 Lakh+</div>
-            <div class="stat-label">Travelers monthly visiting us</div>
-          </div>
-
-          <div class="stat-card">
-            <div class="icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
+            <div class="service-card animate-on-scroll animated">
+              <h3>Corporate & Incentive Groups</h3>
+              <p>From business retreats to incentive tours, we plan and organize group travel that enhances teamwork, motivation, and productivity. We handle all logistics, so your team can focus on the experience.</p>
             </div>
-            <div class="stat-number">650+</div>
-            <div class="stat-label">Network of expert travel agents</div>
-          </div>
-
-          <div class="stat-card">
-            <div class="icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-                <path d="M2 12h20" />
-              </svg>
+            <div class="service-card animate-on-scroll animated">
+              <h3>Award Ceremonies & Conferences</h3>
+              <p>Whether it’s a corporate award function or a business conference, we arrange travel, accommodation, and venue management, ensuring a seamless experience for all attendees.</p>
             </div>
-            <div class="stat-number">65+</div>
-            <div class="stat-label">Destinations served worldwide</div>
-          </div>
-
-          <div class="stat-card">
-            <div class="icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" />
-                <path d="M8.5 8.5v.01" />
-                <path d="M16 15.5v.01" />
-                <path d="M12 12v.01" />
-                <path d="M11 17v.01" />
-                <path d="M7 14v.01" />
-              </svg>
+            <div class="service-card animate-on-scroll animated">
+              <h3>Group Visas & Business Travel</h3>
+              <p>Applying for visas as a group? We specialize in group visa processing, making it easy for teams, families, and organizations to travel without the usual stress. Our experts ensure that your applications are correctly processed for a smooth approval.</p>
             </div>
-            <div class="stat-number">97%</div>
-            <div class="stat-label">Positive quotient by travelers</div>
           </div>
         </div>
       </div>
     </section>
-    <!-- Investors -->
+
     <section>
-      <div class="investor-container">
-        <h1 class="title">
-          Our Investors
-          <div class="title-underline"></div>
-        </h1>
-
-        <div class="investors-grid">
-          <!-- Fundamentum -->
-          <div class="investor-card">
-            <img
-              src="https://img.freepik.com/free-vector/bird-colorful-gradient-design-vector_343694-2506.jpg"
-              alt="Unsplash Logo"
-              class="company-logo"
-            />
-            <div class="team-members">
-              <div class="member">
-                <img
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  alt="Nandan Nilekani"
-                  class="member-image"
-                />
-                <div class="member-info">
-                  <h3>Nandan Nilekani</h3>
-                  <p>Co-Founder and Chairman</p>
-                </div>
-              </div>
-              <div class="member">
-                <img
-                  src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  alt="Sanjeev Aggarwal"
-                  class="member-image"
-                />
-                <div class="member-info">
-                  <h3>Sanjeev Aggarwal</h3>
-                  <p>Co-Founder</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- SAIF Partners -->
-          <div class="investor-card">
-            <img
-              src="https://img.freepik.com/premium-vector/free-vector-beautiful-flying-hummingbird-design-element-banners-posters-leaflets-brochur_1009653-1.jpg"
-              alt="SAIF Partners Logo"
-              class="company-logo"
-            />
-            <div class="team-members">
-              <div class="member">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  alt="Mayank Khanduja"
-                  class="member-image"
-                />
-                <div class="member-info">
-                  <h3>Mayank Khanduja</h3>
-                  <p>Principal</p>
-                </div>
-              </div>
-              <div class="member">
-                <img
-                  src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  alt="Deepak Gaur"
-                  class="member-image"
-                />
-                <div class="member-info">
-                  <h3>Deepak Gaur</h3>
-                  <p>Managing Director</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bessemer -->
-          <div class="investor-card">
-            <img
-              src="https://i.pinimg.com/736x/5d/95/38/5d95381726fea01966a317b8943b1b87.jpg"
-              alt="Bessemer Logo"
-              class="company-logo"
-            />
-            <div class="team-members">
-              <div class="member">
-                <img
-                  src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  alt="Vishal Gupta"
-                  class="member-image"
-                />
-                <div class="member-info">
-                  <h3>Vishal Gupta</h3>
-                  <p>Managing Director</p>
-                </div>
-              </div>
-              <div class="member">
-                <img
-                  src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  alt="Anant Vidur Puri"
-                  class="member-image"
-                />
-                <div class="member-info">
-                  <h3>Anant Vidur Puri</h3>
-                  <p>Partner</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- RB Investments -->
-          <div class="investor-card">
-            <img
-              src="https://img.freepik.com/photos-premium/image-vectorielle-icone-oiseau-colore_1222055-2222.jpg"
-              alt="RB Investments Logo"
-              class="company-logo"
-            />
-            <div class="team-members">
-              <div class="member">
-                <img
-                  src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  alt="Harsh Bothra"
-                  class="member-image"
-                />
-                <div class="member-info">
-                  <h3>Harsh Bothra</h3>
-                  <p>Principal</p>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="about-sec-container">
+        <!-- Hero Section -->
+        <div class="about-us-hero">
+          <h1>Our Values & Commitment</h1>
+          <div class="divider"></div>
+          <p class="text-center">At Trav-TM, we don’t just sell trips—we help you create memorable experiences. Every journey is unique, and we focus on what matters most to you.</p>
+          <ul class="text-left mt-2 list-style-none">
+            <li>✔ Customer-First Approach – We take the time to understand your needs, ensuring you get the best travel solutions.</li>
+            <li>✔ Honest & Transparent Service – No hidden charges, no misleading information—just clear and reliable guidance.</li>
+            <li>✔ Industry Expertise – With years of experience, we provide expert advice at every step.</li>
+            <li>✔ Passion for Travel – We love what we do, and it reflects in how we help you plan your perfect trip.</li>
+          </ul>
         </div>
+      </div>
     </section>
+
+    <section>
+      <div class="about-sec-container">
+        <!-- Hero Section -->
+        <div class="about-us-hero">
+          <h1>Why Choose Us?</h1>
+          <div class="divider"></div>
+          <p>Trav-TM is not just another travel agency. We believe in personalized service, expert guidance, and customer satisfaction. Whether you need help with holiday bookings, group travel, event planning, or visa processing, we ensure everything is handled efficiently.</p>
+          <p class="mt-2">At Trav-TM, you’re not just a client—you’re a valued traveler, and we’re here to make your journey memorable.</p>
+        </div>
+      </div>
+    </section>
+
 @include('layouts.footer2')

@@ -23,6 +23,13 @@
       <div class="splide__pagination"></div>
     </section>
 
+    <section class="about">
+      <div class="container">
+        <h2 class="section-title">Welcome to Trav-TM – Your Trusted Travel and Visa Consultancy Partner</h2>
+        <p class="text-center">At <strong>Trav-TM</strong>, we turn your travel dreams into reality. Whether you’re planning a leisure vacation, a business trip, or need expert guidance for your visa application, we are here to simplify the process for you. With our professional consultancy services, you can travel stress-free while we handle the complexities.</p>
+      </div>
+    </section>
+
     <!-- Quick Service Overview -->
     <section class="services">
       <div class="container">
@@ -31,42 +38,42 @@
           <div class="service-card">
             <div class="service-icon">✈️</div>
             <h3>Flights</h3>
-            <p>Best deals on domestic and international flights</p>
+            <p>Get the <strong>best deals</strong> on domestic and international flights. Whether you're traveling for business or leisure, we help you find the most convenient and budget-friendly options.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">🏝️</div>
             <h3>Holidays</h3>
-            <p>Curated holiday packages for every budget</p>
+            <p>Discover curated holiday packages designed for <strong>every budget</strong>. From relaxing beach vacations to adventurous getaways, we create experiences tailored just for you.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">🏨</div>
             <h3>Hotels</h3>
-            <p>Luxury to budget accommodations worldwide</p>
+            <p>Book your stay with ease! We offer a range of accommodations, from <strong>luxury resorts</strong> to <strong>budget-friendly hotels</strong>, ensuring comfort and convenience.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">🛂</div>
             <h3>Visa Services</h3>
-            <p>Hassle-free visa processing for all countries</p>
+            <p>Navigating visa applications made easy! We assist with <strong>visa processing</strong> for all countries, guiding you through the application and documentation process.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">📘</div>
             <h3>Passport</h3>
-            <p>Assistance with passport applications and renewals</p>
+            <p>Need help with your passport? We provide <strong>support for passport applications and renewals</strong>, ensuring a smooth and hassle-free experience.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">🎭</div>
             <h3>Events</h3>
-            <p>Special travel packages for global events</p>
+            <p>Traveling for a special event? We offer <strong>custom travel packages</strong> for global events, making your experience seamless and memorable.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">🛡️</div>
             <h3>Travel Insurance</h3>
-            <p>Comprehensive coverage for worry-free travel</p>
+            <p>Enjoy worry-free travel with <strong>comprehensive insurance coverage</strong>, protecting you against unexpected events during your journey.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">📝</div>
             <h3>Blog</h3>
-            <p>Travel tips, guides, and inspiration</p>
+            <p>Stay informed with our <strong>travel tips, guides, and inspiration</strong>. From destination insights to travel hacks, our blog keeps you updated and inspired.</p>
           </div>
         </div>
       </div>
@@ -129,161 +136,58 @@
           <div class="feature">
             <div class="feature-icon">🏆</div>
             <h3>25+ Years Experience</h3>
-            <p>Trusted by thousands of travelers since 2008</p>
+            <p>Trusted by thousands of travelers since 2008, delivering reliable and expert travel solutions.</p>
           </div>
           <div class="feature">
             <div class="feature-icon">🌟</div>
             <h3>24/7 Customer Support</h3>
-            <p>We're always here to assist you, anytime, anywhere</p>
+            <p>We're always available to assist you, anytime and anywhere, ensuring seamless travel experiences.</p>
           </div>
           <div class="feature">
             <div class="feature-icon">💰</div>
             <h3>Best Price Guarantee</h3>
-            <p>We promise the most competitive rates for all services</p>
+            <p>Enjoy the most competitive rates for all our services, giving you great value for your money.</p>
           </div>
           <div class="feature">
             <div class="feature-icon">❤️</div>
             <h3>98% Customer Satisfaction</h3>
-            <p>Our clients love our personalized approach</p>
+            <p>Our clients love our personalized approach, making their travel journeys smooth and memorable.</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Destinations Section -->
-    <section class="featured-destinations section-padding">
-      <div class="container">
-        <div class="section-header">
-          <h2>Featured Destinations</h2>
-          <p>
-            Explore our hand-picked selection of extraordinary destinations that
-            promise unforgettable experiences.
-          </p>
-        </div>
-
-        <div class="destinations-grid">
-          <a href="#" class="destination-card">
-            <div class="destination-image">
-              <img
-                src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=800&q=80"
-                alt="Bali"
-              />
-            </div>
-            <div class="destination-info">
-              <div class="destination-header">
-                <h3>Tropical Paradise Getaway</h3>
-                <span class="price">$899</span>
-              </div>
-              <p class="location">Bali, Indonesia</p>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-                <span>4.8 (96 reviews)</span>
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="destination-card">
-            <div class="destination-image">
-              <img
-                src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80"
-                alt="Greece"
-              />
-            </div>
-            <div class="destination-info">
-              <div class="destination-header">
-                <h3>Historic Mediterranean Tour</h3>
-                <span class="price">$1,299</span>
-              </div>
-              <p class="location">Athens, Greece</p>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>4.9 (118 reviews)</span>
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="destination-card">
-            <div class="destination-image">
-              <img
-                src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=800&q=80"
-                alt="Switzerland"
-              />
-            </div>
-            <div class="destination-info">
-              <div class="destination-header">
-                <h3>Alpine Adventure Escape</h3>
-                <span class="price">$1,499</span>
-              </div>
-              <p class="location">Swiss Alps, Switzerland</p>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-                <span>4.7 (84 reviews)</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="text-center">
-          <a href="#" class="btn btn-primary">View All Destinations</a>
         </div>
       </div>
     </section>
 
     <!-- Inquiry Form Section -->
-    <section id="inquiry" class="inquiry-section section-padding">
+    <section id="inquiry" class="inquiry-section" style="margin-bottom: 1rem;">
       <div class="container">
         <div class="inquiry-grid">
           <div class="inquiry-content">
             <span class="subtitle">Get In Touch</span>
-            <h2>Plan Your Perfect Journey</h2>
-            <p>
-              Fill out the form and our travel specialists will get back to you
-              with a personalized quote and itinerary based on your preferences.
-            </p>
-
+            <h2 class="text-left">Planning Your Next Trip? Let's Make It Easy!</h2>
+            <p class="text-justify">Share your travel details with us, and we’ll help you create a perfect travel plan that suits your preferences. Whether you’re looking for a relaxing beach vacation, a fun-filled family trip, or an adventurous getaway, we’ve got you covered.</p>
             <div class="steps">
+              <h3>What You’ll Get:</h3>
               <div class="step">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                  <h3>Share Your Travel Dreams</h3>
-                  <p>
-                    Tell us about your ideal vacation - destinations,
-                    activities, and preferences.
-                  </p>
+                  <h3>Travel Suggestions Just for You</h3>
+                  <p>Get destination ideas and activities based on your interests.</p>
                 </div>
               </div>
 
               <div class="step">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                  <h3>Receive Custom Quote</h3>
-                  <p>
-                    Our experts will craft a tailored itinerary with pricing
-                    options.
-                  </p>
+                  <h3>Transparent Pricing</h3>
+                  <p>Receive a clear quote with all the details upfront.</p>
                 </div>
               </div>
 
               <div class="step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                  <h3>Book With Confidence</h3>
-                  <p>
-                    Finalize your booking with our secure payment system and
-                    flexible terms.
-                  </p>
+                  <h3>Friendly Support</h3>
+                  <p>Our team will guide you at every step to ensure a smooth experience.</p>
                 </div>
               </div>
             </div>
@@ -292,27 +196,23 @@
           <div class="inquiry-form-container">
             <form class="inquiry-form">
               <h3>Request a Quote</h3>
-
+              @csrf
               <div class="form-grid">
                 <div class="form-group">
-                  <label for="name">Full Name</label>
-                  <input type="text" id="name" placeholder="Sachin" required />
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your Name" required value="{{ old('name') }}" />
                 </div>
 
                 <div class="form-group">
                   <label for="email">Email Address</label>
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="sachin@gmail.com"
-                    required
-                  />
+                  <input type="email" id="email" name="email" placeholder="Your Email" required value="{{ old('email') }}" />
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" placeholder="+91 9747625026" />
+                <input type="text" id="phone" name="phone" placeholder="Your Phone Number" required value="{{ old('phone') }}" 
+                  onkeydown="return event.key === 'Backspace' || event.key === 'Tab' || event.key.match(/[0-9]/)" />
               </div>
 
               <div class="form-group">
@@ -347,8 +247,7 @@
               <div class="form-group">
                 <label>Number of Travellers</label>
                 <div class="traveller-buttons">
-                  <button type="button" class="traveller-btn">1</button>
-                  <button type="button" class="traveller-btn active">2</button>
+                  <button type="button" class="traveller-btn">1-2</button>
                   <button type="button" class="traveller-btn">3-5</button>
                   <button type="button" class="traveller-btn">6+</button>
                 </div>
@@ -356,20 +255,43 @@
 
               <div class="form-group">
                 <label for="message">Special Requirements (Optional)</label>
-                <textarea
-                  id="message"
-                  rows="3"
-                  placeholder="Any specific requirements or preferences..."
-                ></textarea>
+                <textarea id="message" rows="3" placeholder="Any specific requirements or preferences..."></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-full">
-                Get My Personalized Quote
-              </button>
+              <button type="submit" class="btn btn-primary btn-full">Submit Your Inquiry</button>
             </form>
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container hotels-section">
+            <h2>What Our Client Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+                    <p>"Amazing service and beautiful hotels. Will definitely book again!"</p>
+                    <h4>- Sarah Johnson</h4>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+                    <p>"The best rates I've found anywhere. Excellent customer service!"</p>
+                    <h4>- Michael Chen</h4>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+                    <p>"Seamless booking process and wonderful stays every time."</p>
+                    <h4>- Emma Thompson</h4>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Blog Highlights Section -->
@@ -466,62 +388,16 @@
           <h2>Who We Are?</h2>
           <div class="content-wrapper">
             <div class="content">
-              <p>
-                Obsessed with the idea of empowering the travelers with best
-                vacation deals, Trav-TM is a product of Holiday Trav-TM Pvt.
-                Ltd. We are an online marketplace that connects a traveler to
-                multiple local travel agents. With the help of these 650+ local
-                travel experts Trav-TM has been able to cater to the needs of
-                over 10 Lac travelers on international tour holidays as well as
-                domestic India tours.
-              </p>
+              <p>At Trav-TM, we’re passionate about making travel simple and stress-free. From visa consultancy and flight bookings to custom travel packages, we help you plan every detail with precision. Our team offers expert guidance, ensuring you have a smooth and enjoyable travel experience.</p>
             </div>
-            <button class="read-more">
-              Read More
-              <svg
-                class="chevron"
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-              >
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
           </div>
         </div>
         <div class="expandable-section">
           <h2>Disclaimer</h2>
           <div class="content-wrapper">
             <div class="content">
-              <p>
-                Trav-TM function solely as an intermediary, facilitating
-                connections between travelers and travel agents. Our role is
-                restricted to providing information about travel options and
-                facilitating the booking process. While we strive to ensure a
-                seamless travel experience, we cannot be held accountable for
-                any deficiencies in the services rendered by travel agents. We
-                neither bear any responsibility nor incur any liability toward
-                owning, operating, or controlling the services offered by travel
-                agents.
-              </p>
+              <p>Trav-TM is a private travel consultancy offering expert guidance and assistance for visa applications, flight bookings, and customized travel packages. We do not represent or have any affiliation with government authorities or embassies. Our services are limited to consultancy and advisory support only.</p>
             </div>
-            <button class="read-more">
-              Read More
-              <svg
-                class="chevron"
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-              >
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
           </div>
         </div>
       </div>

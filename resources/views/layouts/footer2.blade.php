@@ -4,16 +4,15 @@
           <div class="footer-about">
             <img alt="logo" src="{{ asset('assets/trav__tm 01.png') }}" class="logo-img" />
             <h3 class="footer-logo">Trav-TM</h3>
-            <p>
-              Creating unforgettable travel experiences since 2008. Your journey
-              begins with us.
-            </p>
+            <p>Trav-TM: Your trusted partner for travel consultancy, visa assistance, and customized holiday packages. Let us help you create unforgettable journeys.</p>
             <div class="social-icons">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <!-- <a href="#"><i class="fab fa-facebook-f"></i></a>
               <a href="#"><i class="fab fa-twitter"></i></a>
               <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a> -->
             </div>
+            <a href="tel:91-9818710676" class="text-decoration-none" style="color:#fff"><i class="fa-solid fa-phone"></i> +91-9818710676</a><br>
+            <a href="mailto:info@trav-tm.com" class="text-decoration-none" style="color:#fff"><i class="fa-solid fa-envelope"></i> info@trav-tm.com</a>
           </div>
 
           <div class="footer-links">
@@ -37,10 +36,8 @@
           </div>
 
           <div class="footer-subscribe">
-            <h4>Subscribe</h4>
-            <p>
-              Get exclusive deals and travel inspiration straight to your inbox.
-            </p>
+            <h4>Subscribe for Travel Deals!</h4>
+            <p>Get exclusive travel offers, visa updates, and insider tips delivered straight to your inbox.</p>
             <form class="subscribe-form">
               <input type="email" placeholder="Your email" />
               <button type="submit"><i class="fas fa-paper-plane"></i></button>
@@ -49,7 +46,7 @@
         </div>
 
         <div class="footer-bottom">
-          <p>&copy; 2025 Trav-TM. All rights reserved.</p>
+          <p>© 2025 Trav-TM. All rights reserved.</p>
           <div class="footer-bottom-links">
             <a href="#">Terms</a>
             <a href="#">Privacy</a>

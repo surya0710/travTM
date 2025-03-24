@@ -108,7 +108,6 @@ class HomeController extends Controller
     public function internationalHolidays(){
         return view('internationalHolidays');
     }
-
     public function visaServices(){
         return view('visa-services');
     }

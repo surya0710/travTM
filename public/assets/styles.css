@@ -400,6 +400,11 @@ p {
   background-color: var(--light-bg);
 }
 
+.about{
+  padding: 5rem 0 0;
+  background-color: var(--light-bg);
+}
+
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -1346,4 +1351,84 @@ p {
 }
 .hero-splide-main {
   height: 80vh !important;
+}
+
+/* Testimonials */
+
+.testimonials {
+  background-color: #f8f9fa;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.testimonials h2 {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.testimonials-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.testimonial-card {
+  text-align: center;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 20px;
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card:hover {
+  /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); */
+  box-shadow: var(--shadow);
+  transform: translateY(-10px);
+  background-color: #73c2f71b;
+}
+
+.stars {
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .modal-content {
+    margin: 10% auto;
+    width: 95%;
+  }
+
+  .service-card,
+  .hotel-card,
+  .benefit-card {
+    transform: none !important;
+  }
+  .testimonials-grid {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .services-grid,
+  .hotels-grid,
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
 }
