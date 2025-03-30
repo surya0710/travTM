@@ -8,8 +8,8 @@
     </section>
     <section>
       <div class="get-in-touch-container">
-        <h1>Get in Touch</h1>
-        <p class="description">Need assistance with travel bookings, visa applications, or customized holiday plans? Our team at Trav-TM is here to help! Contact us for expert guidance and seamless travel solutions.</p>
+        <h1>{{ json_decode($pageContent->content, true)[0]['heading'] }}</h1>
+        <p class="description">{{ json_decode($pageContent->content, true)[0]['description'] }}</p>
         <div class="content-grid">
           <div class="contact-info">
             <!-- Tollfree Number -->
@@ -26,7 +26,7 @@
               </div>
               <div class="contact-details">
                 <h2>Contact Number</h2>
-                <a href="tel:9818710676" class="text-decoration-none"><p class="phone-number">9818710676</p></a>
+                <a href="tel:{{ $webSettings->website_phone }}" class="text-decoration-none"><p class="phone-number">{{ $webSettings->website_phone }}</p></a>
                 <p class="availability">
                   Available Monday to Saturday, 10 AM - 7 PM
                 </p>
@@ -52,7 +52,7 @@
               </div>
               <div class="contact-details">
                 <h2>Email ID</h2>
-                <a href="mailto:info@trav-tm.com" class="text-decoration-none"><p class="email">info@trav-tm.com</p></a>
+                <a href="mailto:{{ $webSettings->website_email }}" class="text-decoration-none"><p class="email">{{ $webSettings->website_email }}</p></a>
                 <p class="availability">
                   For inquiries, support, or collaborations, feel free to drop us an email.
               </div>
@@ -79,7 +79,7 @@
                 <h2>📍 Office Address</h2>
                 <div class="address">
                   <p>Trav-TM Private Limited</p>
-                  <p>47/A, Kalu Sarai Rd, Vijay Mandal Enclave, Kalu Sarai, New Delhi, Delhi 110016</p>
+                  <p>{{ $webSettings->website_address }}</p>
                 </div>
               </div>
             </div>
@@ -87,7 +87,7 @@
           <!-- Map Section -->
           <div class="map-section">
             <div><h2>📍 View on Google Maps</h2></div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.937675164924!2d77.20030937495336!3d28.541592988205586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3a86a1e2433%3A0xf6f9acb478475587!2sTRAV-TM!5e0!3m2!1sen!2sin!4v1742455912732!5m2!1sen!2sin" 
+            <iframe src="{{ $webSettings->website_map }}" 
             width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           </div>
         </div>
@@ -96,10 +96,16 @@
             <h2 class="text-center">Send Us a Message</h2>
               <form class="fl-inquiry-form">
                 <div class="fl-form-grid">
-                  <input type="text" placeholder="Full Name" required="">
+                  <input type="text" name="name" placeholder="Full Name" required="">
                   <input type="email" placeholder="Email Address" required="">
-                  <input type="tel" placeholder="Phone Number" required="">
-                  <textarea placeholder="Additional Message" rows="4"></textarea>
+                  <input type="text" name="phone" onkeydown="return event.key.match(/[0-9]/) || event.key === 'Backspace' || event.key === 'Tab' || event.key === 'ArrowLeft' || event.key === 'ArrowRight'" placeholder="Phone Number" required="">
+                  <select name="subject" required>
+                    <option value="" disabled selected hidden>What we can help you with?</option>
+                    @foreach($menu as $list)
+                    <option value="{{ $list->name }}">{{ $list->name }}</option>
+                    @endforeach
+                  </select>
+                  <textarea name="message" placeholder="Additional Message" rows="4"></textarea>
                   <button type="submit" class="fl-submit-button">
                     Get in Touch
                   </button>

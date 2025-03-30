@@ -26,35 +26,27 @@
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">SNO.</th>
                     <th scope="col">Title</th>
                     <th scope="col">Slug</th>
-                    <th scope="col">Category </th>
-                    <th scope="col">User</th>
                     <th scope="col">Image</th>
-                    <th scope="col">Description</th>
                     <th scope="col">Meta Keyword</th>
                     <th scope="col">Meta Description</th>
                     <th scope="col">Status </th>
-                    <th scope="col">Created At</th>
                     <th scope="col">Action</th>
 
                   </tr>
                 </thead>
                 <tbody>
-                    @forelse ($getRecord as $value)
+                    @forelse ($blogs as $value)
                   <tr>
-                    <th scope="row">{{ $value->id }}</th>
+                    <th scope="row">{{ $loop->index + 1 }}</th>
                     <td>{{ $value->title }}</td>
                     <td>{{ $value->slug }}</td>
-                    <td>{{ $value->name }}</td>
-                    <td>{{ $value-> user }}</td>
                     <td><img src="{{ url('upload/blog/'.$value->image_file) }}" alt="" width="100"></td>
-                    <td>{!! substr( $value-> description, 0,150) !!}</td>
                     <td>{{ $value-> meta_keywords }}</td>
                     <td>{{ $value-> meta_description }}</td>
                     <td>{{ empty($value->status) ? 'Deactive' : 'Active' }}</td>
-                    <td>{{ date('d-m-Y H:i A', strtotime( $value->created_at))}}</td>
                     <td>
                         <a href="{{url('panel/blog/edit/'.$value->id)}}" class="btn btn-primary btn-sm">Edit</a>
                         <a onclick="return confirm('Are you sure want to delete?');" href="{{url('panel/blog/delete/'.$value->id)}}" class="btn btn-danger btn-sm">Delete</a>
@@ -68,7 +60,7 @@
                   @endforelse
                 </tbody>
               </table>
-              {!! $getRecord->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!}
+              {!! $blogs->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!}
 
             </div>
           </div>

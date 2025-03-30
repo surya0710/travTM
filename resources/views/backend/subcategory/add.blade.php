@@ -53,7 +53,8 @@
                 </div>
                 <div class="col-12">
                     <label for="inputPassword4" class="form-label">Description</label>
-                    <textarea name="description" class="tinymce-editor" value="{{ old('description') }}" id="mce_0" rows="10">{{ old('description') }}</textarea>
+                    <div id="editor-container" style="height: 200px;"></div>
+                    <textarea name="description" style="display:none" value="" id="content"></textarea>
                     <div class="text-danger">{{ $errors->first('description') }}</div>
                 </div>
                 <div class="col-12">

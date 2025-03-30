@@ -35,7 +35,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('home');
 // });
 Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::get('/about',[AboutController::class, 'index'])->name('aboutUs');
+Route::get('/about-us',[AboutController::class, 'index'])->name('aboutUs');
 Route::get('/blogs',[HomeController::class, 'blogindex'])->name('blog.index');
 Route::get('/hotels', [HomeController::class, 'hotels'])->name('hotels');
 Route::get('/flights', [HomeController::class, 'flights'])->name('flights');
@@ -43,8 +43,7 @@ Route::get('/holidays', [HomeController::class, 'holidays'])->name('holidays');
 Route::get('/domestic-holidays', [HomeController::class, 'domesticHolidays'])->name('domestic.Holidays');
 Route::get('/international-holidays', [HomeController::class, 'internationalHolidays'])->name('international.Holidays');
 Route::get('/visa-services', [HomeController::class, 'visaServices'])->name('visaServices');
-Route::get('/blogs/{tag}',[HomeController::class, 'blogviatag'])->name('blog.tag');
-Route::get('/blog-detail/{slug}',[HomeController::class, 'blogSingle'])->name('blog.detail');
+Route::get('/blogs/{slug}',[HomeController::class, 'blogSingle'])->name('blog.detail');
 Route::get('/contact-us',[HomeController::class, 'contact'])->name('contact');
 Route::post('/contactFormEntries', [ContactFormEntryController::class, 'storecomment'])->name('contactEntries.store');
 
@@ -56,12 +55,19 @@ Route::post('login',[AuthController::class, 'auth_login']);
 Route::get('logout', [AuthController::class, 'logout']);
 
 
-Route::group(["middleware"=>'auth'],function(){
+Route::middleware('auth')->group(function () {
     Route::group(['prefix' => 'panel'], function () {
+        Route::get('/', [AuthController::class, 'login']);
         Route::get('dashboard',[AuthController::class, 'dashboard'])->name('dashboard');
 
         // Route::get('services/list',[ServiceController::class, 'service'])->name('servicelist');
         // Route::get('services/add',[ServiceController::class, 'add_service']);
+
+        Route::get('pages/list' , 'App\Http\Controllers\PageController@pageList')->name('pageList');
+        Route::get('pages/add' , 'App\Http\Controllers\PageController@pageAdd')->name('pageAdd');
+        Route::post('pages/add' , 'App\Http\Controllers\PageController@pageStore')->name('pageStore');
+        Route::get('page/edit/{id}' , 'App\Http\Controllers\PageController@pageEdit')->name('pageEdit');
+        Route::post('page/edit/{id}' , 'App\Http\Controllers\PageController@pageUpdate')->name('pageUpdate');
         
         Route::get('banners/list', 'App\Http\Controllers\BannerController@list')->name('bannerList');
         Route::get('banners/add', 'App\Http\Controllers\BannerController@add')->name('bannerAdd');
@@ -100,7 +106,7 @@ Route::group(["middleware"=>'auth'],function(){
         Route::post('remove_work_attr',[WorkprocessController::class, 'remove_work_attr']);
         
 
-        Route::get('blog/list', [BlogController::class, 'blog']);
+        Route::get('blog/list', [BlogController::class, 'blog'])->name('bloglist');
         Route::get('blog/add', [BlogController::class, 'add_blog']);
         Route::post('blog/add', [BlogController::class, 'insert_blog']);
         Route::get('blog/edit/{id}', [BlogController::class, 'edit_blog']);
@@ -128,7 +134,7 @@ Route::group(["middleware"=>'auth'],function(){
         Route::post('client/edit/{id}', [ClientController::class, 'update_client']);
         Route::get('client/delete/{id}', [ClientController::class, 'delete_client']);
 
-        Route::get('contact/list', [ContactController::class, 'contact']);
+        Route::get('contact/list', [ContactController::class, 'contact'])->name('contactlist');
         
         Route::get('blogcomment/list', [BlogComment::class, 'blogcomment']);
         Route::get('blogcomment/active/{id}', [BlogComment::class, 'activecomment']);
@@ -140,6 +146,9 @@ Route::group(["middleware"=>'auth'],function(){
         Route::get('blogcommentreply/delete/{id}', [BlogCommentReplyController::class, 'deletecommentreply']);
 
         Route::get('profilesetting', [UserController::class, 'accountsetting']);
+        Route::get('websettings', [UserController::class, 'websetting'])->name('websetting');
+        Route::post('websettings', [UserController::class, 'websettingupdate'])->name('websettings.update');
+
     });
 
 });

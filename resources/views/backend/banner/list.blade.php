@@ -26,7 +26,7 @@
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">SNO.</th>
                     <th scope="col">Heading</th>
                     <th scope="col">Desciption</th>
                     <th scope="col">Image</th>

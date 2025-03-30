@@ -7,23 +7,17 @@
       />
       <div class="dmHoliday-hero-overlay"></div>
       <div class="dmHoliday-hero-content">
-        <h1 class="dmHoliday-hero-title">About Trav-TM</h1>
-        <p class="dmHoliday-hero-subtitle">
-          At Trav-TM, we believe that travel is more than just reaching a destination—it’s about creating experiences that stay with you for a 
-          lifetime. Whether you’re planning a holiday, a business trip, a group event, or need visa assistance, we ensure a smooth and 
-          stress-free process, making travel planning effortless. Our team of expert travel agents is dedicated to providing you with the best 
-          travel solutions, tailored to your needs. With a wide range of services, we aim to make your travel experience memorable and hassle-free.
-        </p>
+        <h1 class="dmHoliday-hero-title">{{ json_decode($pageContent->content, true)[0]['heading'] }}</h1>
+        <p class="dmHoliday-hero-subtitle">{{ json_decode($pageContent->content, true)[0]['description'] }}</p>
       </div>
     </section>
     <section>
       <div class="about-sec-container">
         <!-- Hero Section -->
         <div class="about-us-hero">
-          <h1>Our Story</h1>
+          <h1>{{ json_decode($pageContent->content, true)[1]['heading'] }}</h1>
           <div class="divider"></div>
-          <p class="text-center">Trav-TM was founded with a simple yet powerful vision—to make travel easy, accessible, and reliable for everyone. Over the years, we noticed that many travelers struggle with complicated visa processes, unpredictable flight prices, and unreliable service providers. That’s why Pooja Dogra, a seasoned professional with 25+ years of experience in the travel industry, decided to create a company that puts travelers first.</p>
-          <p class="text-center mt-2">Trav-TM is a unit of Day Dreams, a company known for its expertise in travel marketing, hotel memberships, and student consultancy. While Trav-TM is a growing brand, its foundation is built on years of industry experience, giving us the ability to provide expert guidance in travel planning.</p>
+          <p class="text-center">{!! nl2br(e(json_decode($pageContent->content, true)[1]['description'])) !!}</p>
         </div>
       </div>
     </section>
@@ -31,9 +25,9 @@
       <div class="about-sec-container">
         <!-- Hero Section -->
         <div class="about-us-hero">
-          <h1>What We Do</h1>
+        <h1>{{ json_decode($pageContent->content, true)[2]['heading'] }}</h1>
           <div class="divider"></div>
-          <p class="text-center">We offer personalized travel solutions for individuals, families, and businesses. Whether you need assistance with flights, hotels, visas, or event planning, we handle everything with expert guidance and a customer-first approach.</p>
+          <p class="text-center">{!! nl2br(e(json_decode($pageContent->content, true)[2]['description'])) !!}</p>
         </div>
         <div class="row">
           <div class="service-grid">

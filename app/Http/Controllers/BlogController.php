@@ -12,8 +12,8 @@ use Illuminate\Support\Str;
 class BlogController extends Controller
 {
     public function blog(){
-        $data['getRecord'] = BlogModel::getList();
-        return view('backend.blog.list',$data);
+        $blogs = BlogModel::where('status',1)->orderBy('id','desc')->paginate(10);
+        return view('backend.blog.list',compact('blogs'));
     }
     public function add_blog(){
         $data['getCat']= BlogCategoryModel::getBlogCat();
@@ -26,7 +26,6 @@ class BlogController extends Controller
         $save= new BlogModel();
         $save->title = $request->title;
         $save->description = $request->description;
-        $save->category_id = $request->category_id;
         $save->user= Auth::user()->name;
         $save->meta_keywords= $request->meta_keywords;
         $save->meta_description= $request->meta_description;

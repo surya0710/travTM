@@ -36,29 +36,6 @@ class CategoryModel extends Model
         ->where('status','=',1)
         ->get();
     }
-    // static public function getCategoryFront(){
-    //     return self::select('category.*')
-    //     ->where('is_delete','=','0')
-    //     ->where('status','=',1)
-    //     ->get();
-    // }
-    // public function getSubCategoryfront(){
-    //     return $this->hasMany(SubCategoryModel::class, "category_id")->where('sub_category.status','=',1);
-    // }
-    // public function getServiceFront(){
-    //     return $this->hasMany(ServiceModel::class, "subcategory_id",'id')->where('service.status','=',1);
-    // }
-
-    // public static function getCategoryFront(){
-    //     return self::where('is_delete', 0)
-    //                ->where('status', 1) 
-    //                ->with(['subcategories' => function($query) {
-    //                     $query->where('status', 1);
-    //                }, 'subcategories.services' => function($query) {
-    //                     $query->where('status', 1);
-    //                }])
-    //                ->get();
-    // }
     public static function getCategoryFront($subcat = null) {
         return self::where('is_delete', 0)
                    ->where('status', 1) 

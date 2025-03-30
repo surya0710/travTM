@@ -6,7 +6,7 @@
         <h1>Blog </h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{  route('dashboard') }}">Home</a></li>
                 <li class="breadcrumb-item active">Edit Blog </li>
             </ol>
         </nav>
@@ -27,16 +27,6 @@
                   <input type="text" name="title" class="form-control" value="{{ $getRecord->title }}" id="inputNanme4">
                   <div class="text-danger">{{ $errors->first('title') }}</div>
                 </div>
-                <div class="col-6">
-                    <label for="subcategory" class="form-label">Select Category</label>
-                    <select class="form-control" name="category_id" id="ChangeCategory" required> 
-                        <option value="">Select Category</option>
-                        @foreach ($getCat as $category)
-                            <option {{ ($getRecord->category_id == $category->id) ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                
                 
                 <div class="col-12">
                     <label for="inputPassword4" class="form-label">Image</label>
@@ -44,9 +34,11 @@
                     <img src="{{ url('upload/blog/'.$getRecord->image_file) }}" width="100">
                     <div class="text-danger">{{ $errors->first('image') }}</div>
                 </div>
+
                 <div class="col-12">
                     <label for="inputPassword4" class="form-label">Description</label>
-                    <textarea name="description" class="tinymce-editor" value="{{ $getRecord->description }}" id="mce_0" rows="10">{{ $getRecord->description }}</textarea>
+                    <div id="editor-container" style="height: 200px;"></div>
+                    <textarea name="description" style="display: none;" id="content"></textarea>
                     <div class="text-danger">{{ $errors->first('description') }}</div>
                 </div>
                 <div class="col-12">
@@ -99,5 +91,7 @@
   
   <script type="text/javascript">
     $('#tags').tagsinput();
+
+    quill.root.innerHTML = `{!! addslashes($getRecord->description) !!}`;
   </script>
 @endsection

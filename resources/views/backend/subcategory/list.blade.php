@@ -6,7 +6,7 @@
         <h1>Dashboard</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
                 <li class="breadcrumb-item active">Dashboard</li>
             </ol>
         </nav>
@@ -26,7 +26,7 @@
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">SNO.</th>
                     <th scope="col">Name</th>
                     <th scope="col">Slug</th>
                     <th scope="col">Title </th>
@@ -44,7 +44,7 @@
                 <tbody>
                     @forelse ($getRecord as $value)
                   <tr>
-                    <th scope="row">{{ $value->id }}</th>
+                    <th scope="row">{{ $loop->index + 1 }}</th>
                     <td>{{ $value->name }}</td>
                     <td>{{ $value->slug }}</td>
                     <td>{{ $value->title }}</td>

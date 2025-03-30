@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<states>
+    <state>
+        <name>Andhra Pradesh</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Arunachal Pradesh</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Assam</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Bihar</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Chhattisgarh</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Goa</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Gujarat</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Haryana</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Himachal Pradesh</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Jharkhand</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Karnataka</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Kerala</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Maharashtra</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Madhya Pradesh</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Manipur</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Meghalaya</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Mizoram</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Nagaland</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Odisha</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Punjab</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Rajasthan</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Sikkim</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Tamil Nadu</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Tripura</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Telangana</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Uttar Pradesh</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Uttarakhand</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>West Bengal</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Andaman &amp; Nicobar (UT)</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Chandigarh (UT)</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Dadra &amp; Nagar Haveli and Daman &amp; Diu (UT)</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Delhi [National Capital Territory (NCT)]</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Jammu &amp; Kashmir (UT)</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Ladakh (UT)</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Lakshadweep (UT)</name>
+        <visa_required>0</visa_required>
+    </state>
+    <state>
+        <name>Puducherry (UT)</name>
+        <visa_required>0</visa_required>
+    </state>
+</states>

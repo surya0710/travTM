@@ -3,28 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trav-TM</title>
-
-    @if (request()->routeIs('home'))
-      <link rel="stylesheet" href="{{ asset('assets/styles.css') }}" />
+    <title>{{ e(isset($pageContent) ? $pageContent->meta_title : '') }}</title>
+    <meta name="description" content="{{ e(isset($pageContent) ? $pageContent->meta_description : '') }}">
+    <meta name="keywords" content="{{ e(isset($pageContent) ? $pageContent->meta_keywords : '') }}">
+    <meta property="og:image" content="{{ asset(isset($pageContent) ? 'uploads/' . $pageContent->meta_image : '') }}" />
+    @if (request()->routeIs('home') || request()->routeIs('blog.index') || request()->routeIs('blog.details'))
+    <link rel="stylesheet" href="{{ asset('assets/styles.css') }}" />
       @else
-      <link rel="stylesheet" href="{{ asset('assets/index.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/index.css') }}" />
     @endif
     
-    <link rel="icon" href="{{ asset('assets/trav__tm 01.png') }}" />
+    <link rel="icon" href="{{ asset($webSettings->website_favicon) }}" />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <!-- Font Awesome for icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <!-- splide -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.11/dist/css/splide.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.11/dist/css/splide.min.css"/>
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -46,53 +41,29 @@
       <!-- <div class="container"> -->
       <div class="nav-container">
         <a href="{{ route('home') }}" class="logo">
-          <img src="{{ asset('assets/trav__tm 01.png') }}" alt="Trav-TM Logo" class="logo-img"/>
+          <img src="{{ asset($webSettings->website_logo) }}" alt="Trav-TM Logo" class="logo-img"/>
         </a>
         <div class="menu-toggle">
           <i class="fas fa-bars"></i>
         </div>
         <ul class="nav-menu">
-          <li class="dropdown">
-            <a href="{{ route('visaServices') }}">Visa Services <i class="fas fa-chevron-down"></i></a>
-            <!-- <ul class="dropdown-menu">
-              <li><a href="#">Hotels</a></li>
-              <li>
-                <a href="#">International Hotels</a>
-              </li>
-              <li><a href="#">Domestic Hotels</a></li>
-            </ul> -->
-          </li>
-          <li class="dropdown">
-            <a href="{{ route('flights') }}">Flights <i class="fas fa-chevron-down"></i></a>
-            <!-- <ul class="dropdown-menu">
-              <li><a href="#">Flight</a></li>
-              <li><a href="./">Domestic Flights</a></li>
-              <li><a href="#">International Flights</a></li>
-            </ul> -->
-          </li>
-          <li class="dropdown">
-            <a href="#">Holidays <i class="fas fa-chevron-down"></i></a>
+          @foreach($menu as $list)
+          <li class="@if(isset($list->subcategories) && count($list->subcategories) > 0) dropdown @endif ">
+            <a href="@if(isset($list->subcategories) && count($list->subcategories) > 0) # @else {{ url($list->slug) }} @endif">{{ $list->name }} 
+              @if(isset($list->subcategories) && count($list->subcategories) > 0)
+              <i class="fas fa-chevron-down"></i>
+              @endif
+            </a>
+            @if(isset($list->subcategories) && count($list->subcategories) > 0)
             <ul class="dropdown-menu">
-              <li><a href="{{ route('holidays') }}">Holiday</a></li>
-              <li><a href="{{ route('domestic.Holidays') }}">Domestic Holiday</a></li>
-              <li>
-                <a href="{{ route('international.Holidays') }}">International Holiday</a>
-              </li>
+              @foreach($list->subcategories as $sub)
+              <li><a href="{{ url($list->slug . '/' . $sub->slug) }}">{{ $sub->name }}</a></li>
+              @endforeach
             </ul>
+            @endif
           </li>
-          <li class="dropdown">
-            <a href="{{ route('hotels') }}">Hotels <i class="fas fa-chevron-down"></i></a>
-            <!-- <ul class="dropdown-menu">
-              <li><a href="#">Hotels</a></li>
-              <li>
-                <a href="#">International Hotels</a>
-              </li>
-              <li><a href="#">Domestic Hotels</a></li>
-            </ul> -->
-          </li>
-          <li><a href="#">Passport Services</a></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">Travel Insurance</a></li>
+          <!-- <li><a href="#">Travel Insurance</a></li> -->
+          @endforeach
         </ul>
       </div>
     </nav>

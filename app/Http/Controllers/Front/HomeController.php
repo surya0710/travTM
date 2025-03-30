@@ -7,21 +7,25 @@ use App\Models\Banners;
 use App\Models\BlogCommentModel;
 use App\Models\BlogModel;
 use App\Models\BlogTagsModel;
+use App\Models\WebsiteSetting;
 use App\Models\SubCategoryModel;
+use App\Models\Pages;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function home(){
         $banners = Banners::where(['status' => 1, 'display_page' => 'home'])->get();
-        return view('home',compact('banners'));
+        $blogs = BlogModel::where('status',1)->orderBy('id','desc')->limit(3)->get();
+        $pageContent = Pages::where('slug', '/')->first();
+        return view('home',compact('banners', 'blogs', 'pageContent'));
     }
 
 
 // blog started
     public function blogindex() {
-        $data['getblog'] = BlogModel::getListFront();
-        return view('blog',$data);
+        $blogs = BlogModel::paginate(12);
+        return view('blogs',compact('blogs'));
     }
     public function blogviatag($tag){
         // Find all blog_ids related to the given tag
@@ -49,28 +53,10 @@ class HomeController extends Controller
     }
 
     public function blogSingle($slug) {
-        $data['getRecent']= BlogModel::getRecentPost();
-        $data['getCount'] = BlogModel::blogCatWithCount();
-        // $data['getblog'] = BlogModel::getBlogBySlug($slug);
-        $data['getblog'] = BlogModel::with(['blog_comment.blog_comment_reply'])
-        ->where('slug','=',$slug)->first();
-        $current_blog= $data['getblog'];
-        // dd($current_blog->toArray());
-        $data['previousblog'] = BlogModel::where('id','<',$current_blog->id)
-        ->orderBy('id','desc')
-        ->first();
-        $data['nextblog'] = BlogModel::where('id','>',$current_blog->id)
-        ->orderBy('id','asc')
-        ->first();
-        // Retrieve the blog by slug
-        $blogdetail = BlogModel::where('slug', $slug)->firstOrFail();
-
-        // Increment the view count
-        $blogdetail->increment('views');
-        return view('blogdetail',$data);
+        $blog = BlogMOdel::where('slug', $slug)->first();
+        return view('blogdetail', compact('blog'));
     }
     public function storecomment(Request $request){
-        // dd($request->all());
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email',
@@ -87,7 +73,8 @@ class HomeController extends Controller
         return redirect()->back()->with('success','Your comment has been submitted, please wait for approval.');
     }
     public function contact(){
-        return view('contact');
+        $pageContent = Pages::where('slug', 'contact-us')->first();
+        return view('contact', compact('pageContent'));
     }
 
     public function hotels(){

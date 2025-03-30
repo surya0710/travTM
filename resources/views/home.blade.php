@@ -1,5 +1,4 @@
 @include('layouts.header')
-
     <!-- Hero Section -->
     <section class="splide-section splide-hero">
       <div class="splide hero-splide-main splide-hero" id="hero-carousel">
@@ -25,8 +24,8 @@
 
     <section class="about">
       <div class="container">
-        <h2 class="section-title">Welcome to Trav-TM – Your Trusted Travel and Visa Consultancy Partner</h2>
-        <p class="text-center">At <strong>Trav-TM</strong>, we turn your travel dreams into reality. Whether you’re planning a leisure vacation, a business trip, or need expert guidance for your visa application, we are here to simplify the process for you. With our professional consultancy services, you can travel stress-free while we handle the complexities.</p>
+        <h2 class="section-title">{{ json_decode($pageContent->content, true)[0]['heading'] }}</h2>
+        <p class="text-center">{{ json_decode($pageContent->content, true)[0]['description'] }}</p>
       </div>
     </section>
 
@@ -215,35 +214,27 @@
                   onkeydown="return event.key === 'Backspace' || event.key === 'Tab' || event.key.match(/[0-9]/)" />
               </div>
 
-              <div class="form-group">
-                <label for="destination">Destination</label>
-                <input
-                  type="text"
-                  id="destination"
-                  placeholder="Paris, Tokyo, Bali, etc."
-                  required
-                />
-              </div>
-
               <div class="form-grid">
                 <div class="form-group">
                   <label>Destination Type</label>
                   <div class="toggle-buttons">
-                    <button type="button" class="toggle-btn active">
+                    <button type="button" class="toggle-btn active" id="domestic-btn">
                       Domestic
                     </button>
-                    <button type="button" class="toggle-btn">
+                    <button type="button" class="toggle-btn" id="international-btn">
                       International
                     </button>
                   </div>
                 </div>
-
                 <div class="form-group">
-                  <label for="travel-date">Travel Date</label>
-                  <input type="date" id="travel-date" required />
+                  <label>Destination</label>
+                  <select name="destination" id="destination-select"></select>
                 </div>
               </div>
-
+              <div class="form-group">
+                  <label for="travel-date">Travel Date</label>
+                  <input type="date" id="travel-date" required />
+              </div>
               <div class="form-group">
                 <label>Number of Travellers</label>
                 <div class="traveller-buttons">
@@ -295,7 +286,7 @@
     </section>
 
     <!-- Blog Highlights Section -->
-    <section class="blog-section section-padding">
+    <section class="blog-section section-padding blog-section-margin">
       <div class="container">
         <div class="blog-header">
           <div>
@@ -304,80 +295,30 @@
               Travel stories, tips, and insights to inspire your next adventure.
             </p>
           </div>
-          <a href="#" class="btn btn-outline"
+          <a href="{{ route('blog.index') }}" class="btn btn-outline"
             >View All Posts <i class="fas fa-arrow-right"></i
           ></a>
         </div>
 
-        <div class="blog-grid">
-          <a href="#" class="blog-card">
+        <div class="blog-grid" id="blogGrid">
+          @foreach($blogs as $blog)
+          <a href="{{ route('blog.detail' , ['slug' => $blog->slug]) }}" class="blog-card">
+            @if($blog->image_file != null)
             <div class="blog-image">
-              <img
-                src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=600&q=80"
-                alt="Packing Tips"
-              />
+              <img src="{{ asset('upload/blog/' . $blog->image_file) }}" alt="{{ $blog->title }}" />
             </div>
+            @endif
             <div class="blog-content">
               <div class="blog-meta">
-                <span class="blog-category">Travel Tips</span>
-                <span class="blog-date">June 12, 2023</span>
+                <!-- <span class="blog-category">Travel Tips</span> -->
+                <span class="blog-date">{{ $blog->created_at->format('M d, Y') }}</span>
               </div>
-              <h3>10 Essential Items to Pack for Any Journey</h3>
-              <p>
-                Discover the must-have items that should be in every traveler's
-                suitcase, regardless of the destination.
-              </p>
-              <span class="read-more"
-                >Read More <i class="fas fa-arrow-right"></i
-              ></span>
+              <h3>{{ $blog->title }}</h3>
+              <p>{{ Str::limit(strip_tags($blog->description), 150) }}</p>
+              <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
             </div>
           </a>
-
-          <a href="#" class="blog-card">
-            <div class="blog-image">
-              <img
-                src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=600&q=80"
-                alt="Hidden Gems"
-              />
-            </div>
-            <div class="blog-content">
-              <div class="blog-meta">
-                <span class="blog-category">Destinations</span>
-                <span class="blog-date">May 28, 2023</span>
-              </div>
-              <h3>Hidden Gems: Unexplored Destinations Worth Visiting</h3>
-              <p>
-                Escape the tourist crowds and discover these lesser-known but
-                equally breathtaking locations around the world.
-              </p>
-              <span class="read-more"
-                >Read More <i class="fas fa-arrow-right"></i
-              ></span>
-            </div>
-          </a>
-
-          <a href="#" class="blog-card">
-            <div class="blog-image">
-              <img
-                src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=600&q=80"
-                alt="Cultural Experiences"
-              />
-            </div>
-            <div class="blog-content">
-              <div class="blog-meta">
-                <span class="blog-category">Culture</span>
-                <span class="blog-date">April 15, 2023</span>
-              </div>
-              <h3>Immersive Cultural Experiences: Beyond Tourism</h3>
-              <p>
-                How to authentically connect with local cultures and create
-                meaningful memories during your travels.
-              </p>
-              <span class="read-more"
-                >Read More <i class="fas fa-arrow-right"></i
-              ></span>
-            </div>
-          </a>
+          @endforeach
         </div>
       </div>
     </section>
@@ -385,22 +326,75 @@
     <section class="read-more-section">
       <div class="container-readmore">
         <div class="expandable-section">
-          <h2>Who We Are?</h2>
+          <h2>{{ json_decode($pageContent->content, true)[1]['heading'] }}</h2>
           <div class="content-wrapper">
             <div class="content">
-              <p>At Trav-TM, we’re passionate about making travel simple and stress-free. From visa consultancy and flight bookings to custom travel packages, we help you plan every detail with precision. Our team offers expert guidance, ensuring you have a smooth and enjoyable travel experience.</p>
+              <p>{{ json_decode($pageContent->content, true)[1]['description'] }}</p>
             </div>
           </div>
         </div>
         <div class="expandable-section">
-          <h2>Disclaimer</h2>
+          <h2>{{ json_decode($pageContent->content, true)[2]['heading'] }}</h2>
           <div class="content-wrapper">
             <div class="content">
-              <p>Trav-TM is a private travel consultancy offering expert guidance and assistance for visa applications, flight bookings, and customized travel packages. We do not represent or have any affiliation with government authorities or embassies. Our services are limited to consultancy and advisory support only.</p>
+              <p>{{ json_decode($pageContent->content, true)[2]['description'] }}</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-
 @include('layouts.footer')
+<script>
+  const domesticStates = [
+      "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat",
+      "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Maharashtra", 
+      "Madhya Pradesh", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", 
+      "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Telangana", "Uttar Pradesh", 
+      "Uttarakhand", "West Bengal", "Andaman & Nicobar (UT)", "Chandigarh (UT)", 
+      "Dadra & Nagar Haveli and Daman & Diu (UT)", "Delhi (NCT)", "Jammu & Kashmir (UT)", 
+      "Ladakh (UT)", "Lakshadweep (UT)", "Puducherry (UT)"
+  ];
+
+  const internationalCountries = [
+      "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina",
+      "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados",
+      "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina",
+      "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde",
+      "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China",
+      "Colombia", "Comoros"
+  ];
+
+  const domesticBtn = document.getElementById("domestic-btn");
+  const internationalBtn = document.getElementById("international-btn");
+  const destinationSelect = document.getElementById("destination-select");
+
+  // Function to update the select options
+  function updateSelectOptions(options) {
+      destinationSelect.innerHTML = `
+          <option disabled value="" selected>Select Destination</option>
+      `;
+      options.forEach(option => {
+          const opt = document.createElement("option");
+          opt.value = option;
+          opt.textContent = option;
+          destinationSelect.appendChild(opt);
+      });
+  }
+
+  // Load Domestic options on page load
+  updateSelectOptions(domesticStates);
+
+  // Event listener for Domestic button
+  domesticBtn.addEventListener("click", () => {
+      updateSelectOptions(domesticStates);
+      domesticBtn.classList.add("active");
+      internationalBtn.classList.remove("active");
+  });
+
+  // Event listener for International button
+  internationalBtn.addEventListener("click", () => {
+      updateSelectOptions(internationalCountries);
+      internationalBtn.classList.add("active");
+      domesticBtn.classList.remove("active");
+  });
+</script>

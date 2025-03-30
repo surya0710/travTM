@@ -3,7 +3,7 @@
       <div class="footer-container">
         <div class="footer-grid">
           <div class="footer-about">
-            <img alt="logo" src="{{ asset('assets/trav__tm 01.png') }}" class="logo-img" />
+            <img alt="logo" src="{{ asset($webSettings->website_logo) }}" class="logo-img" />
             <h3 class="footer-logo">Trav-TM</h3>
             <p>Trav-TM: Your trusted partner for travel consultancy, visa assistance, and customized holiday packages. Let us help you create unforgettable journeys.</p>
             <div class="social-icons">
@@ -12,8 +12,8 @@
               <a href="#"><i class="fab fa-instagram"></i></a>
               <a href="#"><i class="fab fa-linkedin-in"></i></a> -->
             </div>
-            <a href="tel:91-9818710676"><i class="fa-solid fa-phone"></i> +91-9818710676</a><br>
-            <a href="mailto:info@trav-tm.com"><i class="fa-solid fa-envelope"></i> info@trav-tm.com</a>
+            <a href="tel:{{  $webSettings->website_phone }}"><i class="fa-solid fa-phone"></i> {{ $webSettings->website_phone }}</a><br>
+            <a href="mailto:{{ $webSettings->website_email }}"><i class="fa-solid fa-envelope"></i> {{ $webSettings->website_email }}</a>
           </div>
 
           <div class="footer-links">
@@ -21,7 +21,7 @@
             <ul>
               <li><a href="{{ route('aboutUs') }}">About Us</a></li>
               <li><a href="#">Careers</a></li>
-              <li><a href="#">Blog</a></li>
+              <li><a href="{{  route('blog.index') }}">Blog</a></li>
               <li><a href="{{ route('contact') }}">Contact Us</a></li>
             </ul>
           </div>
@@ -47,7 +47,7 @@
         </div>
 
         <div class="footer-bottom">
-          <p>© 2025 Trav-TM. All rights reserved.</p>
+          <p>{{ $webSettings->website_copyright_text }}</p>
           <div class="footer-bottom-links">
             <a href="#">Terms</a>
             <a href="#">Privacy</a>
@@ -122,22 +122,6 @@
       });
 
       //    readmore
-
-      document.querySelectorAll(".read-more").forEach((button) => {
-        button.addEventListener("click", () => {
-          const wrapper = button.closest(".content-wrapper");
-          const content = wrapper.querySelector(".content");
-          const isExpanded = content.classList.contains("expanded");
-
-          if (isExpanded) {
-            content.classList.remove("expanded");
-            button.classList.remove("expanded");
-          } else {
-            content.classList.add("expanded");
-            button.classList.add("expanded");
-          }
-        });
-      });
       //    card carousel
       document.addEventListener("DOMContentLoaded", function () {
         new Splide("#carousel-card", {
