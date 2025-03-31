@@ -44,6 +44,7 @@ Route::get('/domestic-holidays', [HomeController::class, 'domesticHolidays'])->n
 Route::get('/international-holidays', [HomeController::class, 'internationalHolidays'])->name('international.Holidays');
 Route::get('/visa-services', [HomeController::class, 'visaServices'])->name('visaServices');
 Route::get('/blogs/{slug}',[HomeController::class, 'blogSingle'])->name('blog.detail');
+Route::get('/events', [HomeController::class, 'events'])->name('events');
 Route::get('/contact-us',[HomeController::class, 'contact'])->name('contact');
 Route::post('/contactFormEntries', [ContactFormEntryController::class, 'storecomment'])->name('contactEntries.store');
 

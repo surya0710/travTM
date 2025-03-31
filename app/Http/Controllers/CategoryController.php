@@ -32,6 +32,15 @@ class CategoryController extends Controller
         }
 
         $save= new CategoryModel();
+        if($request->hasFile('image')) {
+            $ext = $request->file('image')->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
+            $request->file('image')->move(public_path('uploads'),$filename);
+            $save->image = $filename;
+        }
+        else{
+            $save->image = null;
+        }
         $save->name=$request->name;
         $save->title = $request->title;
         $save->meta_title = $request->meta_title;
@@ -70,6 +79,12 @@ class CategoryController extends Controller
         }
         
         $save= CategoryModel::getSingle($id);
+        if($request->hasFile('image')) {
+            $ext = $request->file('image')->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
+            $request->file('image')->move(public_path('uploads'),$filename);
+            $save->image = $filename;
+        }
         $save->name=$request->name;
         $save->slug= Str::slug($request->name);
         $save->title = $request->title;

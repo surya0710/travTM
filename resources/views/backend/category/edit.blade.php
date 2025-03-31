@@ -20,18 +20,19 @@
               <h5 class="card-title">Edit Category</h5>
 
               <!-- Vertical Form -->
-              <form class="row g-3" action="" method="post">
+              <form class="row g-3" action="" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="col-12">
                   <label for="inputNanme4" class="form-label"> Name</label>
                   <input type="text" name="name" required class="form-control" value="{{ $getRecord->name }}" id="inputNanme4">
                   <div class="text-danger">{{ $errors->first('name') }}</div> 
                 </div>
-                <!-- <div class="col-12">
-                  <label for="inputPassword4" class="form-label">Slug</label>
-                  <input type="text" name="slug" required class="form-control" value="{{ old('slug') }}" id="inputPassword4">
-                  <div class="text-danger">{{ $errors->first('slug') }}</div>
-                </div> -->
+                <div class="col-12">
+                  <label for="image" class="form-label">Image</label>
+                  <input type="file" name="image" required class="form-control" accept=".png, .jpg, .jpeg">
+                  <div class="text-danger">{{ $errors->first('image') }}</div>
+                  <img src="{{ asset('uploads/'.$getRecord->image) }}" width="100px" height="50px">
+                </div>
                 <div class="col-12">
                   <label for="inputEmail4" class="form-label">Title</label>
                   <input type="text" name="title" required class="form-control" value="{{ $getRecord->title }}" id="inputEmail4">

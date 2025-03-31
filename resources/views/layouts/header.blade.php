@@ -48,18 +48,20 @@
         </div>
         <ul class="nav-menu">
           @foreach($menu as $list)
-          <li class="@if(isset($list->subcategories) && count($list->subcategories) > 0) dropdown @endif ">
-            <a href="@if(isset($list->subcategories) && count($list->subcategories) > 0) # @else {{ url($list->slug) }} @endif">{{ $list->name }} 
+          <!-- <li class="@if(isset($list->subcategories) && count($list->subcategories) > 0) dropdown @endif "> -->
+          <li class=" ">
+            <!-- <a href="@if(isset($list->subcategories) && count($list->subcategories) > 0) # @else {{ url($list->slug) }} @endif">{{ $list->name }}  -->
+            <a href="{{ url($list->slug) }}">{{ $list->name }} 
               @if(isset($list->subcategories) && count($list->subcategories) > 0)
-              <i class="fas fa-chevron-down"></i>
+              <!-- <i class="fas fa-chevron-down"></i> -->
               @endif
             </a>
             @if(isset($list->subcategories) && count($list->subcategories) > 0)
-            <ul class="dropdown-menu">
+            <!-- <ul class="dropdown-menu">
               @foreach($list->subcategories as $sub)
               <li><a href="{{ url($list->slug . '/' . $sub->slug) }}">{{ $sub->name }}</a></li>
               @endforeach
-            </ul>
+            </ul> -->
             @endif
           </li>
           <!-- <li><a href="#">Travel Insurance</a></li> -->

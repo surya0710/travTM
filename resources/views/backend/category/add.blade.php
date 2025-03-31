@@ -28,6 +28,11 @@
                   <div class="text-danger">{{ $errors->first('name') }}</div> 
                 </div>
                 <div class="col-12">
+                  <label for="image" class="form-label">Image</label>
+                  <input type="file" name="image" required class="form-control" accept=".png, .jpg, .jpeg">
+                  <div class="text-danger">{{ $errors->first('image') }}</div>
+                </div>
+                <div class="col-12">
                   <label for="inputEmail4" class="form-label">Title</label>
                   <input type="text" name="title" required class="form-control" value="{{ old('title') }}" id="inputEmail4">
                   <div class="text-danger">{{ $errors->first('title') }}</div>

@@ -12,8 +12,8 @@ use Intervention\Image\Drivers\Gd\Driver;
 class SubCategoryController extends Controller
 {
     public function subcategory(){
-        $data['getRecord']= SubCategoryModel::getRecord();
-        return view('backend.subcategory.list',$data);
+        $getRecord = SubCategoryModel::getRecord();
+        return view('backend.subcategory.list',compact('getRecord'));
     }
     public function add_subcategory() {
         $data['getCat']= CategoryModel::getCategory();

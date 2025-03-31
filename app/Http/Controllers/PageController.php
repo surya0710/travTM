@@ -92,8 +92,6 @@ class PageController extends Controller
             $filename = time().'.'.$ext;
             $request->file('image')->move(public_path('uploads'),$filename);
             $page->image = $filename;
-        } else {
-            $page->image = '';
         }
 
         if($request->hasFile('meta_image')){
@@ -101,8 +99,6 @@ class PageController extends Controller
             $filename = time().'.'.$ext;
             $request->file('meta_image')->move(public_path('uploads'),$filename);
             $page->meta_image = $filename;
-        } else {
-            $page->meta_image = '';
         }
 
         $page->status = $request->status;

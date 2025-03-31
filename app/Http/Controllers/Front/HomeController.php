@@ -7,6 +7,7 @@ use App\Models\Banners;
 use App\Models\BlogCommentModel;
 use App\Models\BlogModel;
 use App\Models\BlogTagsModel;
+use App\Models\CategoryModel;
 use App\Models\WebsiteSetting;
 use App\Models\SubCategoryModel;
 use App\Models\Pages;
@@ -78,15 +79,18 @@ class HomeController extends Controller
     }
 
     public function hotels(){
-        return view('hotels');
+        $pageContent = CategoryModel::where('slug', 'hotels')->first();
+        return view('hotels', compact('pageContent'));
     }
 
     public function flights(){
-        return view('flights');
+        $pageContent = CategoryModel::where('slug', 'flights')->first();
+        return view('flights', compact('pageContent'));
     }
 
     public function holidays(){
-        return view('holidays');
+        $pageContent = CategoryModel::where('slug', 'holidays')->first();
+        return view('holidays', compact('pageContent'));
     }
 
     public function domesticHolidays(){
@@ -96,6 +100,12 @@ class HomeController extends Controller
         return view('internationalHolidays');
     }
     public function visaServices(){
-        return view('visa-services');
+        $pageContent = CategoryModel::where('slug', 'visa-services')->first();
+        return view('visa-services', compact('pageContent'));
+    }
+
+    public function events(){
+        $pageContent = CategoryModel::where('slug', 'events')->first();
+        return view('events', compact('pageContent'));
     }
 }

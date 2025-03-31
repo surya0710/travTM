@@ -12,15 +12,8 @@
           Explore amazing destinations around the world
         </p>
         <div class="nav-buttons">
-          <a href="DomesticHoliday.html" class="btn-primary"
-            >Domestic Packages</a
-          >
-          <a
-            href="InternationalHoliday.html
-          "
-            class="btn-primary"
-            >International Packages</a
-          >
+          <a href="{{ route('domestic.Holidays') }}" class="btn-primary">Domestic Packages</a>
+          <a href="{{ route('international.Holidays') }}" class="btn-primary" >International Packages</a>
         </div>
       </div>
     </section>

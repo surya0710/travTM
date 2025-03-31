@@ -105,8 +105,6 @@
 @endsection
 @section('script')
 <script type="text/javascript">
-    $('#tags').tagsinput();
-
     quill.root.innerHTML = `{!! addslashes($getSingle->description) !!}`;
 </script>
 @endsection

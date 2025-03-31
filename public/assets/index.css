@@ -2042,7 +2042,7 @@ p {
 }
 
 .visa-container {
-  max-width: 1200px;
+  max-width: 85%;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -2165,7 +2165,7 @@ p {
 
 /* Why Choose Us section */
 .visa-why-choose-us {
-  max-width: 64rem;
+  max-width: 100%;
   margin: 0 auto;
   text-align: center;
   background: rgba(255, 255, 255, 0.8);
@@ -2186,6 +2186,24 @@ p {
 .visa-benefits-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.events-why-choose-us{
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 4rem;
+}
+
+.events-benefits-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 
