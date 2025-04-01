@@ -78,7 +78,7 @@
       </div>
     </section>
     <!-- card carousel readmore -->
-    <section class="splide-section">
+    <!-- <section class="splide-section">
       <div class="splide" id="carousel-card">
         <h2>Get The Best Out Of Your Next Getaway</h2>
         <br />
@@ -121,11 +121,9 @@
             </li>
           </ul>
         </div>
-
-        <!-- Pagination Dots -->
         <div class="splide__pagination"></div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Why Choose Us -->
     <section class="why-choose-us">

@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ e(isset($pageContent) ? $pageContent->meta_title : '') }}</title>
+    <title>{{ e(isset($pageContent->meta_title) ? $pageContent->meta_title : $pageContent->title ) }}</title>
     <meta name="description" content="{{ e(isset($pageContent) ? $pageContent->meta_description : '') }}">
     <meta name="keywords" content="{{ e(isset($pageContent) ? $pageContent->meta_keywords : '') }}">
     <meta property="og:image" content="{{ asset(isset($pageContent) ? 'uploads/' . $pageContent->meta_image : '') }}" />
-    @if (request()->routeIs('home') || request()->routeIs('blog.index') || request()->routeIs('blog.details'))
+    @if (request()->routeIs('home') || request()->routeIs('blog.index') || request()->routeIs('blog.detail'))
     <link rel="stylesheet" href="{{ asset('assets/styles.css') }}" />
       @else
     <link rel="stylesheet" href="{{ asset('assets/index.css') }}" />
@@ -64,7 +64,6 @@
             </ul> -->
             @endif
           </li>
-          <!-- <li><a href="#">Travel Insurance</a></li> -->
           @endforeach
         </ul>
       </div>

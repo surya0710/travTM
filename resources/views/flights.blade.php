@@ -76,52 +76,42 @@
           <div class="fl-booking-grid">
             <div class="fl-booking-column">
               <div class="fl-booking-header">
-                <span class="fl-badge">Domestic Flights</span>
-                <h3>Explore Domestic Destinations</h3>
-                <p>
-                  Discover the beauty of domestic travel with our comprehensive
-                  network of flights connecting major cities and hidden gems
-                  across the country.
-                </p>
-              </div>
-              <form class="fl-inquiry-form">
-                <div class="fl-form-grid">
-                  <input type="text" placeholder="Full Name" required />
-                  <input type="email" placeholder="Email Address" required />
-                  <input type="tel" placeholder="Phone Number" required />
-                  <input type="text" placeholder="Departure City" required />
-                  <input type="text" placeholder="Destination City" required />
-                  <input type="date" required />
-                  <textarea
-                    placeholder="Additional Message"
-                    rows="4"
-                  ></textarea>
-                  <button type="submit" class="fl-submit-button">
-                    <span class="fl-icon">📤</span>
-                    Submit Inquiry
-                  </button>
-                </div>
-              </form>
-            </div>
-
-            <div class="fl-booking-column">
-              <div class="fl-booking-header">
-                <span class="fl-badge">International Flights</span>
+                <!-- <span class="fl-badge">International Flights</span>
                 <h3>Connect Globally</h3>
                 <p>
                   Embark on international adventures with our wide selection of
                   flights to destinations around the world at competitive
                   prices.
-                </p>
+                </p> -->
+              </div>
+              <img src="{{ asset('assets/flight-page.png') }}" class="w-100">
+            </div>
+
+            <div class="fl-booking-column">
+              <div class="fl-booking-header">
+                <!-- <span class="fl-badge">International Flights</span>
+                <h3>Connect Globally</h3>
+                <p>
+                  Embark on international adventures with our wide selection of
+                  flights to destinations around the world at competitive
+                  prices.
+                </p> -->
               </div>
               <form class="fl-inquiry-form">
                 <div class="fl-form-grid">
                   <input type="text" placeholder="Full Name" required />
                   <input type="email" placeholder="Email Address" required />
                   <input type="tel" placeholder="Phone Number" required />
-                  <input type="text" placeholder="Departure City" required />
-                  <input type="text" placeholder="Destination City" required />
                   <input type="date" required />
+                  <div class="toggle-buttons">
+                    <button type="button" class="toggle-btn active" id="domestic-btn">
+                      Domestic
+                    </button>
+                    <button type="button" class="toggle-btn" id="international-btn">
+                      International
+                    </button>
+                  </div>
+                  <select name="destination" id="destination-select"></select>
                   <textarea
                     placeholder="Additional Message"
                     rows="4"
@@ -178,3 +168,57 @@
       </section>
     </main>
 @include('layouts.footer2')
+<script>
+  const domesticStates = [
+      "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat",
+      "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Maharashtra", 
+      "Madhya Pradesh", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", 
+      "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Telangana", "Uttar Pradesh", 
+      "Uttarakhand", "West Bengal", "Andaman & Nicobar (UT)", "Chandigarh (UT)", 
+      "Dadra & Nagar Haveli and Daman & Diu (UT)", "Delhi (NCT)", "Jammu & Kashmir (UT)", 
+      "Ladakh (UT)", "Lakshadweep (UT)", "Puducherry (UT)"
+  ];
+
+  const internationalCountries = [
+      "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina",
+      "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados",
+      "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina",
+      "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde",
+      "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China",
+      "Colombia", "Comoros"
+  ];
+
+  const domesticBtn = document.getElementById("domestic-btn");
+  const internationalBtn = document.getElementById("international-btn");
+  const destinationSelect = document.getElementById("destination-select");
+
+  // Function to update the select options
+  function updateSelectOptions(options) {
+      destinationSelect.innerHTML = `
+          <option disabled value="" selected>Select Destination</option>
+      `;
+      options.forEach(option => {
+          const opt = document.createElement("option");
+          opt.value = option;
+          opt.textContent = option;
+          destinationSelect.appendChild(opt);
+      });
+  }
+
+  // Load Domestic options on page load
+  updateSelectOptions(domesticStates);
+
+  // Event listener for Domestic button
+  domesticBtn.addEventListener("click", () => {
+      updateSelectOptions(domesticStates);
+      domesticBtn.classList.add("active");
+      internationalBtn.classList.remove("active");
+  });
+
+  // Event listener for International button
+  internationalBtn.addEventListener("click", () => {
+      updateSelectOptions(internationalCountries);
+      internationalBtn.classList.add("active");
+      domesticBtn.classList.remove("active");
+  });
+</script>

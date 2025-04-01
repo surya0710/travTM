@@ -1,30 +1,37 @@
 @include('layouts.header')
 <section class="hl-hero">
-      <img
-        src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800"
-        alt="Travel Hero"
-        class="hero-image"
-      />
+      <img src="{{ asset('uploads/' . $pageContent->image ) }}" alt="{{ $pageContent->title }}" class="hero-image" />
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1 class="hero-title">Discover Your Perfect Holiday</h1>
         <p class="hero-subtitle">
           Explore amazing destinations around the world
         </p>
-        <div class="nav-buttons">
+        <!-- <div class="nav-buttons">
           <a href="{{ route('domestic.Holidays') }}" class="btn-primary">Domestic Packages</a>
           <a href="{{ route('international.Holidays') }}" class="btn-primary" >International Packages</a>
-        </div>
+        </div> -->
       </div>
     </section>
 
-    <section class="hl-section">
-      <div class="hl-container">
-        <h2 class="section-title">Featured Destinations</h2>
-        <p class="section-subtitle">
-          Explore our most popular holiday packages
-        </p>
-        <div class="destinations-grid" id="destinationsGrid"></div>
+    <section id="domestic" class="hotels-section">
+      <h2>Our Hotel Services Includes</h2>
+      <div class="hotels-grid">
+        <div class="hotel-card">
+          <div class="hotel-info">
+            <h3>Plan Your Next Holiday in India</h3>
+            <p class="text-center">From serene beaches to scenic hill stations, Trav-TM offers customized domestic holiday packages that suit your 
+              preferences. Whether you’re craving adventure, relaxation, or cultural experiences, we’ll help you create the perfect getaway.</p>
+          </div>
+        </div>
+        <div class="hotel-card">
+          <div class="hotel-info">
+            <h3>Let’s Plan Your International Packages</h3>
+            <p class="text-center">Looking for an exciting overseas vacation? Trav-TM offers customized international holiday packages designed around
+               your interests. Whether you’re seeking a beach escape, a cultural experience, or an adventure trip, we’ll help you create unforgettable
+                memories.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -85,4 +92,6 @@
         </div>
       </div>
     </section>
+
+    
 @include('layouts.footer2')

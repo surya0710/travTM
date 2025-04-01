@@ -8,148 +8,15 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
           <h1 class="hero-title">Discover Your Perfect Stay</h1>
-          <p class="hero-subtitle">
-            Luxury accommodations at unbeatable prices
-          </p>
-          <div class="nav-buttons">
-            <a href="#" class="btn-primary">Domestic Hotels</a>
-            <a href="#" class="btn-primary"
-              >International Hotels</a
-            >
-          </div>
+          <p class="hero-subtitle">Luxury accommodations at unbeatable prices</p>
         </div>
       </section>
 
     <!-- Overview Section -->
     <section class="overview">
-      <h2>Our Hotel Booking Services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <i class="fas fa-hotel"></i>
-          <h3>Premium Hotels</h3>
-          <p>Access to over 100,000 hotels worldwide</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-concierge-bell"></i>
-          <h3>Best Service</h3>
-          <p>24/7 customer support for all bookings</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-percent"></i>
-          <h3>Best Rates</h3>
-          <p>Guaranteed lowest prices and special deals</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Domestic Hotels Section -->
-    <section id="domestic" class="hotels-section">
-      <h2>Domestic Hotels</h2>
-      <div class="hotels-grid">
-        <div class="hotel-card">
-          <img
-            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&auto=format"
-            alt="Luxury Hotel"
-          />
-          <div class="hotel-info">
-            <h3>Luxury Resort Mumbai</h3>
-            <p>Starting from ₹8,999/night</p>
-            <button
-              class="inquiry-btn"
-              onclick="openInquiryForm('Luxury Resort Mumbai')"
-            >
-              Inquire Now
-            </button>
-          </div>
-        </div>
-        <div class="hotel-card">
-          <img
-            src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=500&auto=format"
-            alt="Beach Resort"
-          />
-          <div class="hotel-info">
-            <h3>Goa Beach Resort</h3>
-            <p>Starting from ₹7,499/night</p>
-            <button
-              class="inquiry-btn"
-              onclick="openInquiryForm('Goa Beach Resort')"
-            >
-              Inquire Now
-            </button>
-          </div>
-        </div>
-        <div class="hotel-card">
-          <img
-            src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=500&auto=format"
-            alt="Mountain Retreat"
-          />
-          <div class="hotel-info">
-            <h3>Shimla Mountain Retreat</h3>
-            <p>Starting from ₹6,999/night</p>
-            <button
-              class="inquiry-btn"
-              onclick="openInquiryForm('Shimla Mountain Retreat')"
-            >
-              Inquire Now
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- International Hotels Section -->
-    <section id="international" class="hotels-section">
-      <h2>International Hotels</h2>
-      <div class="hotels-grid">
-        <div class="hotel-card">
-          <img
-            src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=500&auto=format"
-            alt="Dubai Hotel"
-          />
-          <div class="hotel-info">
-            <h3>Dubai Luxury Palace</h3>
-            <p>Starting from $299/night</p>
-            <button
-              class="inquiry-btn"
-              onclick="openInquiryForm('Dubai Luxury Palace')"
-            >
-              Inquire Now
-            </button>
-          </div>
-        </div>
-        <div class="hotel-card">
-          <img
-            src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=500&auto=format"
-            alt="Bangkok Hotel"
-          />
-          <div class="hotel-info">
-            <h3>Bangkok City Resort</h3>
-            <p>Starting from $199/night</p>
-            <button
-              class="inquiry-btn"
-              onclick="openInquiryForm('Bangkok City Resort')"
-            >
-              Inquire Now
-            </button>
-          </div>
-        </div>
-        <div class="hotel-card">
-          <img
-            src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=500&auto=format"
-            alt="Maldives Resort"
-          />
-          <div class="hotel-info">
-            <h3>Maldives Paradise</h3>
-            <p>Starting from $499/night</p>
-            <button
-              class="inquiry-btn"
-              onclick="openInquiryForm('Maldives Paradise')"
-            >
-              Inquire Now
-            </button>
-          </div>
-        </div>
-      </div>
+      <h2>Hotel Booking Services – Comfort & Convenience Across the Globe</h2>
+      <p class="text-center">Whether you’re traveling for business or leisure, we help you find and book the ideal hotel to match your needs. From budget-friendly
+       stays to luxurious resorts, we provide seamless hotel booking services for domestic and international destinations.</p>
     </section>
 
     <!-- Why Choose Us -->
@@ -166,58 +33,157 @@
           <div class="fl-benefits-grid">
             <div class="fl-benefit-card">
               <div class="fl-benefit-icon">🛡️</div>
-              <h3>Secure Booking</h3>
-              <p>
-                Your transactions are protected with advanced security measures.
-              </p>
+              <h3>Global Network</h3>
+              <p>Access to hotels and resorts worldwide, offering a range of options tailored to your preferences.</p>
+            </div>
+            <div class="fl-benefit-card">
+              <div class="fl-benefit-icon">👥</div>
+              <h3>Customized Recommendations</h3>
+              <p>We understand your requirements and suggest the best accommodation for your trip, ensuring maximum comfort.</p>
+            </div>
+            <div class="fl-benefit-card">
+              <div class="fl-benefit-icon">💳</div>
+              <h3>Competitive Rates</h3>
+              <p>Get the best deals and offers on your hotel bookings with no hidden charges.</p>
             </div>
             <div class="fl-benefit-card">
               <div class="fl-benefit-icon">⏰</div>
               <h3>24/7 Support</h3>
-              <p>
-                Our dedicated team is available around the clock to assist you.
-              </p>
-            </div>
-            <div class="fl-benefit-card">
-              <div class="fl-benefit-icon">💳</div>
-              <h3>Best Price Guarantee</h3>
-              <p>We offer competitive prices and price match guarantees.</p>
-            </div>
-            <div class="fl-benefit-card">
-              <div class="fl-benefit-icon">👥</div>
-              <h3>Experienced Team</h3>
-              <p>Our travel experts ensure a smooth booking experience.</p>
+              <p>Our team is available round-the-clock to assist you with booking modifications or queries.</p>
             </div>
           </div>
         </div>
     </section>
 
-    <section class="testimonials">
-        <div class="tls-container hotels-section">
-            <h2>What Our Guests Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">
-                        ★★★★★
-                    </div>
-                    <p>"Amazing service and beautiful hotels. Will definitely book again!"</p>
-                    <h4>- Sarah Johnson</h4>
+    <!-- Domestic Hotels Section -->
+    <section id="domestic" class="hotels-section">
+      <h2>Our Hotel Services Includes</h2>
+      <div class="hotels-grid">
+        <div class="hotel-card">
+          <div class="hotel-info">
+            <h3>Domestic Hotel Bookings</h3>
+            <p class="text-center">Book hotels in major cities, hill stations, beach destinations, and cultural hubs across India.</p>
+            <p class="text-center">Options available for business travelers, families, couples, and solo travelers.</p>
+          </div>
+        </div>
+        <div class="hotel-card">
+          <div class="hotel-info">
+            <h3>International Hotel Bookings</h3>
+            <p class="text-center">Reserve hotels in popular travel destinations worldwide, including beach resorts, city hotels, countryside retreats, and luxury properties.</p>
+            <p class="text-center">Assistance with group bookings for corporate or family trips.</p>
+          </div>
+        </div>
+        <div class="hotel-card">
+          <div class="hotel-info">
+            <h3>Tailored Stays for Every Traveler</h3>
+            <p>Business Hotels: Centrally located with meeting facilities.</p>
+            <p>Leisure Resorts: Scenic properties with entertainment and relaxation amenities.</p>
+            <p>Family-Friendly Hotels: Spacious rooms and kid-friendly services.</p>
+            <p>Romantic Getaways: Elegant stays with special amenities for couples.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- International Hotels Section -->
+    <div class="visa-container">
+        <div class="visa-why-choose-us">
+            <h2 class="text-center">How We Simplify Your Hotel Booking?</h2>
+            <div class="visa-benefits-grid">
+            <div class="visa-benefit">
+                <div class="visa-benefit-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12l4 4 4-4-4-4-4 4z"></path>
+                        <path d="M20 12l-4 4-4-4 4-4 4 4z"></path>
+                        <path d="M8 16l4 4 4-4"></path>
+                        <circle cx="12" cy="4" r="2"></circle>
+                        <path d="M12 6v2"></path>
+                    </svg>
                 </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        ★★★★★
-                    </div>
-                    <p>"The best rates I've found anywhere. Excellent customer service!"</p>
-                    <h4>- Michael Chen</h4>
+
+                <h3>Personalized Assistance</h3>
+                <p>Share your preferences, and we’ll suggest the best hotel options based on your location, budget, and needs.</p>
+            </div>
+
+            <div class="visa-benefit">
+                <div class="visa-benefit-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+                        <path d="M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"></path>
+                        <path d="M14 2v6h6"></path>
+                        <path d="M9 12h6"></path>
+                        <path d="M9 16h6"></path>
+                    </svg>
                 </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        ★★★★★
-                    </div>
-                    <p>"Seamless booking process and wonderful stays every time."</p>
-                    <h4>- Emma Thompson</h4>
+                <h3>Seamless Booking Process</h3>
+                <p>Our team handles the entire booking process, ensuring a smooth and hassle-free experience.</p>
+            </div>
+
+            <div class="visa-benefit">
+                <div class="visa-benefit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 6v6l4 2"></path>
+                  </svg>
                 </div>
+                <h3>Flexible Check-In & Check-Out Options</h3>
+                <p>We accommodate special requests to suit your travel plans.</p>
+            </div>
             </div>
         </div>
+    </div>
+    
+    <section class="hl-form-section">
+      <div class="hl-container">
+        <h2 class="section-title">Get the Best Hotel Deals</h2>
+        <div class="hl-form-container">
+          <form id="inquiryForm">
+            <div class="form-grid">
+              <input
+                type="text"
+                placeholder="Your Name"
+                class="form-input"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Email Address"
+                class="form-input"
+                required
+              />
+            </div>
+            <div class="form-grid">
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                class="form-input"
+                required
+              />
+              <input
+                type="text"
+                placeholder="Preferred Destination"
+                class="form-input"
+                required
+              />
+            </div>
+            <div class="form-grid">
+              <input type="date" class="form-input" required />
+              <input
+                type="number"
+                placeholder="Number of Travelers"
+                class="form-input"
+                required
+              />
+            </div>
+            <textarea
+              placeholder="Additional Requirements"
+              class="form-input"
+              rows="4"
+            ></textarea>
+            <button type="submit" class="btn-primary" style="width: 100%">
+              Send Inquiry
+            </button>
+          </form>
+        </div>
+      </div>
     </section>
 @include('layouts.footer2')

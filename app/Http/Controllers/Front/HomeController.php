@@ -25,37 +25,15 @@ class HomeController extends Controller
 
 // blog started
     public function blogindex() {
-        $blogs = BlogModel::paginate(12);
-        return view('blogs',compact('blogs'));
-    }
-    public function blogviatag($tag){
-        // Find all blog_ids related to the given tag
-        $blogids = BlogTagsModel::where('slug', $tag)->pluck('blog_id');
-
-        // Retrieve all blogs related to the tag
-        $getblog = BlogModel::with(['cat_name','blog_comment'=>function($query){
-            $query->where('status',1);
-        } ,'blog_comment.blog_comment_reply' => function($query){
-            $query->where('status',1);
-        }])
-        ->withcount(['blog_comment'])
-        ->whereIn('id', $blogids)
-        ->get()
-        ->map(function ($blog) {
-            // Add a custom field for total count
-            $blog->total_comment_count = $blog->blog_comment_count + $blog->blog_comment->sum(fn ($comment) => $comment->blog_comment_reply->count());
-            return $blog;
-        });
-        // dd($getblog->toArray());
-
-        // Optionally, you can return or display the getblog
-        return view('blog', compact('getblog'));
-
+        $pageContent = Pages::where('slug', 'blogs')->first();
+        $blogs = BlogModel::latest()->paginate(12);
+        return view('blogs',compact('blogs', 'pageContent'));
     }
 
     public function blogSingle($slug) {
-        $blog = BlogMOdel::where('slug', $slug)->first();
-        return view('blogdetail', compact('blog'));
+        $latestBlogs = BlogModel::latest()->take(3)->get();
+        $pageContent = BlogMOdel::where('slug', $slug)->first();
+        return view('blog-detail', compact('pageContent', 'latestBlogs'));
     }
     public function storecomment(Request $request){
         $validated = $request->validate([
@@ -107,5 +85,15 @@ class HomeController extends Controller
     public function events(){
         $pageContent = CategoryModel::where('slug', 'events')->first();
         return view('events', compact('pageContent'));
+    }
+
+    public function passports(){
+        $pageContent = CategoryModel::where('slug', 'passports')->first();
+        return view('passports', compact('pageContent'));
+    }
+
+    public function travelInsurance(){
+        $pageContent = CategoryModel::where('slug', 'travel-insurance')->first();
+        return view('travel-insurance', compact('pageContent'));
     }
 }

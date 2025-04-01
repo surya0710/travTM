@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-12">
                   <label for="image" class="form-label">Image</label>
-                  <input type="file" name="image" required class="form-control" accept=".png, .jpg, .jpeg">
+                  <input type="file" name="image" class="form-control" accept=".png, .jpg, .jpeg">
                   <div class="text-danger">{{ $errors->first('image') }}</div>
                   <img src="{{ asset('uploads/'.$getRecord->image) }}" width="100px" height="50px">
                 </div>

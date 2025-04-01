@@ -25,8 +25,6 @@ class BlogModel extends Model
         ->leftJoin('blog_comment', 'blog_comment.blog_id', '=', 'blog.id')
         ->leftJoin('blog_comment_reply', 'blog_comment.id', '=', 'blog_comment_reply.blog_comment_id')
         ->where('blog.status','=',1)
-        
-        
         ->groupBy(
             'blog.id', 
             'blog.title', 
