@@ -47,8 +47,7 @@ class ContactFormEntryController extends Controller
                 'request' => $request->all(),
             ], function ($mail) use ($request) {
                 $mail->from('info@3elabs.com', 'Info');
-                $mail->subject('New Enquiry');
-                $mail->to('suryakantyadav16@gmail.com')->subject($request->subject);
+                $mail->to('suryakantyadav16@gmail.com')->subject('New Enquiry');
             });
 
             return redirect()->route('thankyou'); // Redirect to thankyou page if mail is sent
