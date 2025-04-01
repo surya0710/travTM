@@ -48,8 +48,8 @@ Route::get('/events', [HomeController::class, 'events'])->name('events');
 Route::get('/passports', [HomeController::class, 'passports'])->name('passports');
 Route::get('/travel-insurance', [HomeController::class, 'travelInsurance'])->name('travel-insurance');
 Route::get('/contact-us',[HomeController::class, 'contact'])->name('contact');
-Route::post('/contactFormEntries', [ContactFormEntryController::class, 'storecomment'])->name('contactEntries.store');
-
+Route::post('/formSubmit', [ContactFormEntryController::class, 'store'])->name('formSubmit');
+Route::get('/thankyou', [HomeController::class, 'thankyou'])->name('thankyou');
 
 
 

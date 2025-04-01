@@ -96,4 +96,9 @@ class HomeController extends Controller
         $pageContent = CategoryModel::where('slug', 'travel-insurance')->first();
         return view('travel-insurance', compact('pageContent'));
     }
+
+    public function thankyou(){
+        $pageContent = Pages::where('slug', 'thankyou')->first();
+        return view('thankyou', compact('pageContent'));
+    }
 }
