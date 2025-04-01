@@ -30,7 +30,7 @@
             <h4>Support</h4>
             <ul>
               <li><a href="#">Help Center</a></li>
-              <li><a href="./faq.html">FAQs</a></li>
+              <li><a href="#">FAQs</a></li>
               <li><a href="#">Terms of Service</a></li>
               <li><a href="#">Privacy Policy</a></li>
             </ul>
