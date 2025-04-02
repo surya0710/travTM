@@ -16,8 +16,8 @@ use App\Http\Controllers\Front\FrontServiceController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkprocessController;
-
-;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TestMail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,6 +50,11 @@ Route::get('/travel-insurance', [HomeController::class, 'travelInsurance'])->nam
 Route::get('/contact-us',[HomeController::class, 'contact'])->name('contact');
 Route::post('/formSubmit', [ContactFormEntryController::class, 'store'])->name('formSubmit');
 Route::get('/thankyou', [HomeController::class, 'thankyou'])->name('thankyou');
+
+Route::get('/send-test-email', function () {
+    Mail::to('suryakantyadav16@gmail.com')->cc('op.lg06@gmail.com')->send(new TestMail());
+    return 'Email Sent!';
+});
 
 
 

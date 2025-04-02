@@ -84,6 +84,7 @@
     <button class="close-btn" id="close-popup-btn">&times;</button>
     <h2>Consult Now</h2>
     <form id="dmHl-inquiryForm" method="post" action="{{ route('formSubmit') }}">
+      <input type="hidden" name="service" value="{{ $pageContent->title }}" />
       <div class="dmHl-form-grid">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <input type="hidden" name="visa_type" value="">
@@ -91,7 +92,7 @@
         <input type="email" name="email" placeholder="Email Address" class="dmHl-form-input" required />
       </div>
       <div class="dmHl-form-grid">
-        <input type="tel" name="phone" placeholder="Phone Number" class="dmHl-form-input" required />
+        <input type="tel" name="phone" placeholder="Phone Number" class="dmHl-form-input" required maxlength="10" minlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" />
         <input type="text" name="destination" placeholder="Preferred Destination" class="dmHl-form-input" required />
       </div>
       <textarea placeholder="Additional Requirements" class="dmHl-form-input" rows="4" ></textarea>

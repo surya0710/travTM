@@ -77,7 +77,7 @@
       <section>
         <div class="about-sec-container">
           <!-- Hero Section -->
-          <div class="about-us-hero">
+          <div class="event-how-it-works">
             <h2 class="text-center">How It Works</h2>
             <div class="divider"></div>
             <ul class="text-left mt-2 list-style-none">
@@ -90,4 +90,74 @@
       </section>
     </div>
 @include('layouts.footer2')
-@include('layouts.popupForm')
+
+<div class="overlay" id="overlay">
+  <div class="popup">
+    <button class="close-btn" id="close-popup-btn">&times;</button>
+    <h2>Enquire Now</h2>
+    <form id="dmHl-inquiryForm" method="post" action="{{ route('formSubmit') }}">
+      @csrf
+      <input type="hidden" name="service" value="{{ $pageContent->title }}" />
+      <div class="dmHl-form-grid">
+        <input type="text" name="name" placeholder="Your Name" class="dmHl-form-input" required />
+        <input type="email" name="email" placeholder="Email Address" class="dmHl-form-input" required />
+      </div>
+      <div class="dmHl-form-grid">
+        <input type="text" class="dmHl-form-input" id="phone" name="phone" placeholder="Your Phone Number" required value="{{ old('phone') }}" 
+          maxlength="10" minlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" />
+        <select name="service" class="dmHl-form-input" required>
+          <option value="">Select Service</option>
+          @foreach($events as $event) 
+            <option value="{{ $event->name }}">{{ $event->name }}</option>
+          @endforeach
+        </select>
+      </div>
+      <textarea placeholder="Additional Information" name="message" class="dmHl-form-input" rows="4" ></textarea>
+      <button type="submit" class="dmHl-btn-primary">Enquire</button>
+    </form>
+  </div>
+</div>
+<script>
+
+  // Open popup
+  function openPopup(){
+        overlay.style.display = "flex";
+        document.body.style.overflow = "hidden"; // Prevent scrolling
+
+        // Add animation
+        overlay.style.opacity = 0;
+        setTimeout(() => {
+            overlay.style.transition = "opacity 0.3s ease";
+            overlay.style.opacity = 1;
+        }, 10);
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    const closePopupBtn = document.getElementById("close-popup-btn");
+    const overlay = document.getElementById("overlay");
+
+    // Close popup
+    function closePopup() {
+      overlay.style.opacity = 0;
+      setTimeout(() => {
+        overlay.style.display = "none";
+        document.body.style.overflow = "auto"; // Enable scrolling
+        overlay.style.transition = "";
+
+        // Reset the form when closing
+        if (successMessage.style.display === "block") {
+          form.reset();
+          successMessage.style.display = "none";
+        }
+      }, 300);
+    }
+
+    closePopupBtn.addEventListener("click", closePopup);
+
+    // Close when clicking outside the popup
+    overlay.addEventListener("click", function (event) {
+      if (event.target === overlay) {
+        closePopup();
+      }
+    });
+  });
+</script>

@@ -194,6 +194,7 @@
             <form class="inquiry-form" method="post" action="{{ route('formSubmit') }}">
               <h3>Request a Quote</h3>
               @csrf
+              <input type="hidden" name="service" value="Home Page Form" />
               <div class="form-grid">
                 <div class="form-group">
                   <label for="name">Name</label>
@@ -209,7 +210,7 @@
               <div class="form-group">
                 <label for="phone">Phone Number</label>
                 <input type="text" id="phone" name="phone" placeholder="Your Phone Number" required value="{{ old('phone') }}" 
-                  onkeydown="return event.key === 'Backspace' || event.key === 'Tab' || event.key.match(/[0-9]/)" />
+                  maxlength="10" minlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" />
               </div>
 
               <div class="form-grid">
@@ -255,7 +256,7 @@
       </div>
     </section>
 
-    <section class="testimonials">
+    <!-- <section class="testimonials">
         <div class="container hotels-section">
             <h2>What Our Client Say</h2>
             <div class="testimonials-grid">
@@ -282,7 +283,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Blog Highlights Section -->
     <section class="blog-section section-padding blog-section-margin">

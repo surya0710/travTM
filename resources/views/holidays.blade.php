@@ -88,52 +88,66 @@
           Let us help you create the perfect custom package
         </p>
         <div class="hl-form-container">
-          <form id="inquiryForm">
-            <div class="form-grid">
-              <input
-                type="text"
-                placeholder="Your Name"
-                class="form-input"
-                required
-              />
-              <input
-                type="email"
-                placeholder="Email Address"
-                class="form-input"
-                required
-              />
+          <form class="inquiry-form" method="post" action="{{ route('formSubmit') }}">
+            <h3>Request a Quote</h3>
+            @csrf
+            <input type="hidden" name="service" value="{{ $pageContent->title }}" />
+            <div class="form-grid" style="margin-bottom: 0;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="name">Name</label>
+                <input type="text" class="form-input" id="name" name="name" placeholder="Your Name" required value="{{ old('name') }}" />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" class="form-input" id="email" name="email" placeholder="Your Email" required value="{{ old('email') }}" />
+              </div>
             </div>
-            <div class="form-grid">
-              <input
-                type="tel"
-                placeholder="Phone Number"
-                class="form-input"
-                required
-              />
-              <input
-                type="text"
-                placeholder="Preferred Destination"
-                class="form-input"
-                required
-              />
+            <div class="form-grid" style="margin-bottom: 0;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="phone">Phone Number</label>
+                <input type="text" class="form-input" id="phone" name="phone" placeholder="Your Phone Number" required value="{{ old('phone') }}" 
+                 maxlength="10" minlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" />
+              </div>
+              <div class="form-group">
+                <label for="travel-date">Travel Date</label>
+                <input class="form-input" type="date" id="travel-date" name="travelDate" required />
+              </div>
             </div>
+
             <div class="form-grid">
-              <input type="date" class="form-input" required />
-              <input
-                type="number"
-                placeholder="Number of Travelers"
-                class="form-input"
-                required
-              />
+              <div class="form-group" style="margin-bottom: 0;">
+                <label>Destination Type</label>
+                <div class="toggle-buttons">
+                  <button type="button" class="toggle-btn active" id="domestic-btn">
+                    Domestic
+                  </button>
+                  <button type="button" class="toggle-btn" id="international-btn">
+                    International
+                  </button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Destination</label>
+                <select class="form-input" name="destination" required id="destination-select"></select>
+              </div>
             </div>
-            <textarea
-              placeholder="Additional Requirements"
-              class="form-input"
-              rows="4"
-            ></textarea>
-            <button type="submit" class="btn-primary" style="width: 100%">
-              Send Inquiry
-            </button>
+            <div class="form-group">
+              <label>Number of Travellers</label>
+              <div class="traveller-buttons">
+                <input type="hidden" name="travellers">
+                <button type="button" class="traveller-btn">1-2</button>
+                <button type="button" class="traveller-btn">3-5</button>
+                <button type="button" class="traveller-btn">6+</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Special Requirements (Optional)</label>
+              <textarea id="message" class="form-input" name="message" rows="3" placeholder="Any specific requirements or preferences..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">Submit Your Inquiry</button>
           </form>
         </div>
       </div>
@@ -141,3 +155,65 @@
 
     
 @include('layouts.footer2')
+<script>
+
+  document.querySelectorAll('.traveller-btn').forEach(button => {
+      button.addEventListener('click', function() {
+          const travellerCount = this.textContent.trim();
+          document.querySelector('input[name="travellers"]').value = travellerCount;
+      });
+  });
+
+  const domesticStates = [
+      "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat",
+      "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Maharashtra", 
+      "Madhya Pradesh", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", 
+      "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Telangana", "Uttar Pradesh", 
+      "Uttarakhand", "West Bengal", "Andaman & Nicobar (UT)", "Chandigarh (UT)", 
+      "Dadra & Nagar Haveli and Daman & Diu (UT)", "Delhi (NCT)", "Jammu & Kashmir (UT)", 
+      "Ladakh (UT)", "Lakshadweep (UT)", "Puducherry (UT)"
+  ];
+
+  const internationalCountries = [
+      "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina",
+      "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados",
+      "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina",
+      "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde",
+      "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China",
+      "Colombia", "Comoros"
+  ];
+
+  const domesticBtn = document.getElementById("domestic-btn");
+  const internationalBtn = document.getElementById("international-btn");
+  const destinationSelect = document.getElementById("destination-select");
+
+  // Function to update the select options
+  function updateSelectOptions(options) {
+      destinationSelect.innerHTML = `
+          <option disabled value="" selected>Select Destination</option>
+      `;
+      options.forEach(option => {
+          const opt = document.createElement("option");
+          opt.value = option;
+          opt.textContent = option;
+          destinationSelect.appendChild(opt);
+      });
+  }
+
+  // Load Domestic options on page load
+  updateSelectOptions(domesticStates);
+
+  // Event listener for Domestic button
+  domesticBtn.addEventListener("click", () => {
+      updateSelectOptions(domesticStates);
+      domesticBtn.classList.add("active");
+      internationalBtn.classList.remove("active");
+  });
+
+  // Event listener for International button
+  internationalBtn.addEventListener("click", () => {
+      updateSelectOptions(internationalCountries);
+      internationalBtn.classList.add("active");
+      domesticBtn.classList.remove("active");
+  });
+</script>

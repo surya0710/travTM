@@ -2,7 +2,7 @@
     <section class="dmHoliday-hero">
       <img
         src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-        alt="Domestic Travel"
+        alt="{{ $pageContent->title }}"
         class="dmHoliday-hero-image"
       />
     </section>
@@ -94,12 +94,13 @@
         <div class="grid-container contact-form-padding">
           <div class="contact-form">
             <h2 class="text-center">Send Us a Message</h2>
-              <form class="fl-inquiry-form">
+              <form class="fl-inquiry-form" method="post" action="{{ route('formSubmit') }}">
+                @csrf
                 <div class="fl-form-grid">
                   <input type="text" name="name" placeholder="Full Name" required="">
-                  <input type="email" placeholder="Email Address" required="">
-                  <input type="text" name="phone" onkeydown="return event.key.match(/[0-9]/) || event.key === 'Backspace' || event.key === 'Tab' || event.key === 'ArrowLeft' || event.key === 'ArrowRight'" placeholder="Phone Number" required="">
-                  <select name="subject" required>
+                  <input type="email" name="email" placeholder="Email Address" required="">
+                  <input type="text" maxlength="10" minlength="10" name="phone" onkeydown="return event.key.match(/[0-9]/) || event.key === 'Backspace' || event.key === 'Tab' || event.key === 'ArrowLeft' || event.key === 'ArrowRight'" placeholder="Phone Number" required="">
+                  <select name="service" required>
                     <option value="" disabled selected hidden>What we can help you with?</option>
                     @foreach($menu as $list)
                     <option value="{{ $list->name }}">{{ $list->name }}</option>

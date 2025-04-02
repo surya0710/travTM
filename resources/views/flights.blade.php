@@ -3,17 +3,10 @@
       <!-- Hero Section -->
 
       <section class="dmHoliday-hero flight-page">
-        <img
-          src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05"
-          alt="Domestic Travel"
-          class="dmHoliday-hero-image"
-        />
+        <img src="{{ asset('uploads/' . $pageContent->image ) }}" alt="{{ $pageContent->title }}" class="dmHoliday-hero-image" />
         <div class="dmHoliday-hero-overlay"></div>
         <div class="dmHoliday-hero-content">
-          <h1 class="dmHoliday-hero-title">Find Your Perfect Flight</h1>
-          <p class="dmHoliday-hero-subtitle">
-            Discover amazing deals on flights worldwide
-          </p>
+          <h1 class="dmHoliday-hero-title">{{ $pageContent->title }}</h1>
         </div>
       </section>
 
@@ -97,12 +90,14 @@
                   prices.
                 </p> -->
               </div>
-              <form class="fl-inquiry-form">
+              <form class="fl-inquiry-form" method="post" action="{{ route('formSubmit') }}">
+                @csrf
+                <input type="hidden" name="service" value="{{ $pageContent->title }}" />
                 <div class="fl-form-grid">
-                  <input type="text" placeholder="Full Name" required />
-                  <input type="email" placeholder="Email Address" required />
-                  <input type="tel" placeholder="Phone Number" required />
-                  <input type="date" required />
+                  <input type="text" name="name" placeholder="Full Name" required />
+                  <input type="email" name="email" placeholder="Email Address" required />
+                  <input type="tel" name="phone" placeholder="Phone Number" required maxlength="10" minlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" />
+                  <input type="date" name="travelDate" required />
                   <div class="toggle-buttons">
                     <button type="button" class="toggle-btn active" id="domestic-btn">
                       Domestic
@@ -112,7 +107,7 @@
                     </button>
                   </div>
                   <select name="destination" id="destination-select"></select>
-                  <textarea
+                  <textarea name="message"
                     placeholder="Additional Message"
                     rows="4"
                   ></textarea>

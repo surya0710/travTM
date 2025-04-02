@@ -136,49 +136,36 @@
       <div class="hl-container">
         <h2 class="section-title">Get the Best Hotel Deals</h2>
         <div class="hl-form-container">
-          <form id="inquiryForm">
+          <form id="inquiryForm" method="post" action="{{ route('formSubmit') }}">
+            @csrf
+            <input type="hidden" name="service" value="{{ $pageContent->title }}" />
             <div class="form-grid">
-              <input
-                type="text"
-                placeholder="Your Name"
-                class="form-input"
-                required
-              />
-              <input
-                type="email"
-                placeholder="Email Address"
-                class="form-input"
-                required
-              />
+              <input type="text" name="name" placeholder="Your Name" class="form-input" required />
+              <input type="email" name="email" placeholder="Email Address" class="form-input" required />
             </div>
             <div class="form-grid">
-              <input
-                type="tel"
-                placeholder="Phone Number"
-                class="form-input"
-                required
-              />
-              <input
-                type="text"
-                placeholder="Preferred Destination"
-                class="form-input"
-                required
-              />
+              <input type="text" class="form-input" name="phone" placeholder="Your Phone Number" required value="{{ old('phone') }}" 
+              maxlength="10" minlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" />
+              <input type="text" placeholder="Travel Destination" class="form-input" required />
             </div>
             <div class="form-grid">
-              <input type="date" class="form-input" required />
-              <input
-                type="number"
-                placeholder="Number of Travelers"
-                class="form-input"
-                required
-              />
+              <input type="text" id="dateInput" class="form-input" name="checkin" placeholder="Check-In Date" required />
+              <input type="text" id="dateInput" class="form-input" name="checkout" placeholder="Check-out Date" required />
             </div>
-            <textarea
-              placeholder="Additional Requirements"
-              class="form-input"
-              rows="4"
-            ></textarea>
+            <select name="travellers" placeholder="Number of Travelers" class="form-input" required>
+              <option value="" disabled selected>Number of Travelers</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+            <textarea placeholder="Additional Requirements" class="form-input" rows="4" placeholder="Special Requests"></textarea>
             <button type="submit" class="btn-primary" style="width: 100%">
               Send Inquiry
             </button>
@@ -187,3 +174,13 @@
       </div>
     </section>
 @include('layouts.footer2')
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const dateInputs = document.querySelectorAll('#dateInput');
+    dateInputs.forEach(input => {
+      input.addEventListener('focus', function() {
+        this.type = 'date';
+      });
+    });
+  });
+</script>

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('destination')->nullable();
             $table->date('travelDate')->nullable();
             $table->string('travellers')->nullable();
-            $table->string('message')->nullable();
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }

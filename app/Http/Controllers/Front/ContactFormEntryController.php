@@ -8,6 +8,7 @@ use App\Models\Query;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\GeneralMail;
 
 class ContactFormEntryController extends Controller
 {
@@ -59,7 +60,36 @@ class ContactFormEntryController extends Controller
         if($request->has('message')){
             $query->message = $request->message;
         }
+        if($request->has('checkin')){
+            $query->checkin = $request->checkin;
+        }
+        if($request->has('checkout')){
+            $query->checkout = $request->checkout;
+        }
+        if($request->has('service')){
+            $query->service = $request->service;
+        }
         if($query->save()){
+            $mailData = [
+                'subject' => 'New Query on Trav Tm',
+                'name' => 'Trav Tm',
+                'message' => [
+                    'name' => $query->name,
+                    'email' => $query->email,
+                    'phone' => $query->phone,
+                    'destination' => $query->destination ?? null,
+                    'travelDate' => $query->travelDate ?? null,
+                    'travellers' => $query->travellers ?? null,
+                    'message' => $query->message ?? null,
+                    'checkin' => $query->checkin ?? null,
+                    'checkout' => $query->checkout ?? null,
+                    'service' => $query->service ?? null,
+                ],
+            ];
+        
+            Mail::to('op.lg06@gmail.com')
+                ->cc('cc-suryakantyadav16@gmail.com') // Optional
+                ->send(new GeneralMail($mailData));
             return redirect()->route('thankyou');
         }
         else{
