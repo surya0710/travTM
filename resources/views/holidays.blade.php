@@ -34,7 +34,53 @@
         </div>
       </div>
     </section>
+    <section class="hotels-section">
+    <div class="visa-why-choose-us">
+        <h2 class="text-center">Why Choose Trav-TM for Holiday Packages?</h2>
+        <div class="visa-benefits-grid">
+          <div class="visa-benefit">
+            <div class="visa-benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 6L5 10L3 8"></path>
+                  <path d="M9 12L5 16L3 14"></path>
+                  <path d="M9 18L5 22L3 20"></path>
+                  <line x1="11" y1="6" x2="21" y2="6"></line>
+                  <line x1="11" y1="12" x2="21" y2="12"></line>
+                  <line x1="11" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </div>
 
+            <h3>Tailored Itineraries</h3>
+            <p>We design holiday plans based on your preferences.</p>
+          </div>
+
+          <div class="visa-benefit">
+            <div class="visa-benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="6" r="4"></circle>
+                <path d="M4 20c0-4 4-7 8-7s8 3 8 7"></path>
+              </svg>
+            </div>
+            <h3>Experienced Team</h3>
+            <p>Our travel experts recommend hidden gems and popular spots.</p>
+          </div>
+
+          <div class="visa-benefit">
+            <div class="visa-benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+              <!-- Travel Bag -->
+              <rect x="6" y="7" width="12" height="10" rx="2" ry="2"></rect>
+              <path d="M9 7V4a3 3 0 0 1 6 0v3"></path>
+              <line x1="6" y1="17" x2="6" y2="21"></line>
+              <line x1="18" y1="17" x2="18" y2="21"></line>
+            </svg>
+            </div>
+            <h3>Seamless Travel</h3>
+            <p>From transport to accommodation, we manage it all.</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="hl-form-section">
       <div class="hl-container">
         <h2 class="section-title">Plan Your Dream Holiday</h2>

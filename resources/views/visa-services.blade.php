@@ -101,6 +101,12 @@
 </div>
 <script>
 
+  @if(session()->has('error'))
+    <script>
+      openPopup();
+    </script>
+  @endif
+
   // Open popup
   function openPopup(){
         const btn = event.target;

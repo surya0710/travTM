@@ -89,6 +89,5 @@
         </div>
       </section>
     </div>
-  </section>
 @include('layouts.footer2')
 @include('layouts.popupForm')

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\ContactFormEntry;
+use App\Models\Query;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
@@ -42,17 +43,27 @@ class ContactFormEntryController extends Controller
             return redirect()->back()->withErrors($validator )->withInput();
         }
         
-        try {
-            Mail::send('emails.contact', [
-                'request' => $request->all(),
-            ], function ($mail) use ($request) {
-                $mail->from('info@3elabs.com', 'Info');
-                $mail->to('suryakantyadav16@gmail.com')->subject('New Enquiry');
-            });
-
-            return redirect()->route('thankyou'); // Redirect to thankyou page if mail is sent
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Failed to send email, please try again later.');
+        $query = new Query();
+        $query->name = $request->name;
+        $query->email = $request->email;
+        $query->phone = $request->phone;
+        if($request->has('destination')){
+            $query->destination = $request->destination;
+        }
+        if($request->has('travelDate')){
+            $query->travelDate = $request->travelDate;
+        }
+        if($request->has('travellers')){
+            $query->travellers = $request->travellers;
+        }
+        if($request->has('message')){
+            $query->message = $request->message;
+        }
+        if($query->save()){
+            return redirect()->route('thankyou');
+        }
+        else{
+            return redirect()->back()->with('error','Something went wrong');
         }
 
     }

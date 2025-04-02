@@ -191,7 +191,7 @@
           </div>
 
           <div class="inquiry-form-container">
-            <form class="inquiry-form">
+            <form class="inquiry-form" method="post" action="{{ route('formSubmit') }}">
               <h3>Request a Quote</h3>
               @csrf
               <div class="form-grid">
@@ -226,16 +226,17 @@
                 </div>
                 <div class="form-group">
                   <label>Destination</label>
-                  <select name="destination" id="destination-select"></select>
+                  <select name="destination" required id="destination-select"></select>
                 </div>
               </div>
               <div class="form-group">
                   <label for="travel-date">Travel Date</label>
-                  <input type="date" id="travel-date" required />
+                  <input type="date" id="travel-date" name="travelDate" required />
               </div>
               <div class="form-group">
                 <label>Number of Travellers</label>
                 <div class="traveller-buttons">
+                  <input type="hidden" name="travellers">
                   <button type="button" class="traveller-btn">1-2</button>
                   <button type="button" class="traveller-btn">3-5</button>
                   <button type="button" class="traveller-btn">6+</button>
@@ -244,7 +245,7 @@
 
               <div class="form-group">
                 <label for="message">Special Requirements (Optional)</label>
-                <textarea id="message" rows="3" placeholder="Any specific requirements or preferences..."></textarea>
+                <textarea id="message" name="message" rows="3" placeholder="Any specific requirements or preferences..."></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary btn-full">Submit Your Inquiry</button>
@@ -343,6 +344,14 @@
     </section>
 @include('layouts.footer')
 <script>
+
+  document.querySelectorAll('.traveller-btn').forEach(button => {
+      button.addEventListener('click', function() {
+          const travellerCount = this.textContent.trim();
+          document.querySelector('input[name="travellers"]').value = travellerCount;
+      });
+  });
+
   const domesticStates = [
       "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat",
       "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Maharashtra", 
